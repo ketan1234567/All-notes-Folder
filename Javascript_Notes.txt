@@ -1,0 +1,1950 @@
+*)javascript is programing language  of Html and
+ web it makes web page dynamic. it is an interpreted programing language
+with object oriented language with object-oriented capabilities.
+
+1)it is client side language
+
+javascript history
+
+*)1995 by Brendan Eich (NetScape) [Developed By Javascript]
+
+*)Advantage of javascript
+1)client side Execution
+2)Validation on Broswer
+
+*)Disadnvantage of javascript
+1)less Secure
+2)no hardware Access
+
+*)way of adding javacript
+1)Inline 
+Inside head tag
+Inside Body tag
+2)External File
+Inside head tag
+Inside Body tag
+
+<script>
+
+</script>
+1)document.write()
+
+This is Function to write arbitrary HTML and Content into 
+page if we use this function after an html document is fully
+laded will delete all existing html.it is used only for testing
+purpose.
+document.write("hello");
+
+2)window.alert();
+This is Function used to display data in alert dialog box
+alert really should be used only when you truely want to stop 
+everything and let the user know something 
+
+function 
+
+Function are subprograms which are used to compute a value or perform
+a task
+1) code reusalibily 
+
+*)Type of Function
+Library Or Built-in Function
+Ex:-ValueOff(),write(),alert() etc
+
+*)UserDefined Function
+
+*)creating Function
+systanx
+
+Function user_Name(){
+Block Of statment;
+}
+function display(){
+document.write("ketan deshmukh");
+}
+*)calling Function
+display();
+
+*)Rule
+Function name only start with a letter or underscore(_)
+Function name can not start with number.
+do not start with a number
+do not use reserved keywords eg:-else if etc
+Function name are case-sensitive in javascript
+
+*)IMP Calling Function is very Important part because of
+calling Function it means you have to display there code 
+
+*)Function parameter
+Function Function_name(){
+ block of statment;
+}
+function_name(name,anil);
+*)IMP[javascript function definitions do not specify data types of
+parametrs]
+
+*)javascript function do not  perform type
+ of checking on the passed arguments
+*)javascript function do not check the numbers of
+ argument received
+
+function display(name){
+document.write(name);
+}
+display("geekshows")
+    <script>
+      function display(name3,name2,name1){
+      document.write(name1,name2,name3);
+      }
+      display("ketan","vishal","anil"); // we have to pass any type 
+like true false string number
+
+
+    </script>
+
+26/12/2022
+
+*)Function Argument Missing 
+if a function is called with missing arguments the value are set to undefined
+
+Function add(a,b,c){
+document.write("A"+a+"B"+b+"C");
+} 
+*)Aguments Objects
+The arguments object contains  of array of the argument When Function was called
+This  objects contains
+an entry for each argument passes to the function the first entry index staring at 0
+The argument object is not an array
+It is similiat to an array but does not have array property except length.
+
+    <script>
+        //Argument Objcets
+
+
+      function display(name,name2){
+
+          arguments[0]="ketan"; It can change value 
+      //document.write("A:"+a+"B:"+b+"C:"+c);
+      document.write(arguments[0],arguments[1]);
+  // document.write(arguments[0],arguments[1]); it can be display the length
+
+      }
+      display("anil","vishal"); // third value of undefined
+*)if we can iteration  we have to use arguments of objects
+*)document.write(arguments.callee);// 
+
+These are giving information all of the function details
+
+
+*)Many Function Arguments
+If Function with called with too many Arguments
+These argumnets can be reached using  the arguments object which is a
+built in
+
+*)Default Parameter
+
+javascript allows the use of arrays and null as default values
+
+<script>
+function add(name1,name2,name3="ketan",name4){ // These are writing code to passing value in parameters place 
+// we can not write code after parameters giving value after that 
+document.write("Name:"+name1+"Name2:"+name2+"Name3:"+name3+"Name4:"+name4);
+        }
+add("anil","vishal","kedar",500);// They are undefined value we can not pass value 
+</script>
+
+*)Default parameter with Array [Important]
+ <script>
+    // Parametr with array passing 
+
+    function sum(name1,a=["ani","vishal","ketan"]){
+       for(var i=0; i<=a.length; i++){
+        document.write(a[i]);
+       }
+    }
+    sum(400,[10,20,30]);
+  </script>
+
+*)Rest Parameter[IMportant]
+
+The rest parameter allows to represent 
+an indefinite number of arguments as an array
+
+syntax:
+Function function_name(...args)
+{
+block of stament;
+}
+The rest operator must be the last parameter to Function 
+
+*)IMP
+1)Rest parameter is Acually is one type of array 
+ <script>
+    // These are Rest Parameters  imp This is  acutally array 
+    function sum(a,...ketan){
+        for( var i=0; i<=ketan.length; i++){
+            document.write(a,ketan[i]+"<br>");
+        }
+    }
+sum(10,20,30,40,50,60); // Rest Operator Must be last Operator
+</script>
+
+*)Difference Between Arguments[imp]
+
+There are three different between rest parameters and arguments
+
+object:- 
+1)Rest parameters are only the ones that haven't 
+been given a separate name,
+while the afrguments objects conatins all argument 
+passed to the function.
+
+2)The argument object is not real array while rest paramater an array 
+instances meaning methods like sort,map,forEach,
+or pop can be appplied on directly.
+
+3)The argument object has additional Functionality 
+specific to itslef (like the callee property)'
+
+*)Return statement
+
+A Return statment may be return any type data,
+includeing array and object.
+ <script>
+    // This is Return statement 
+    function returnstatmnt(a=["ketan","vishal"]){
+        return (a[1]); // we can pass array object and anything data 
+    }
+    document.write(returnstatmnt([10,20]));
+ </script>
+*************End************************
+27/12/2022
+
+Variable Scope in JavaScript
+javascript has two scope
+1)local
+2)global
+
+Global:-A variable that is declared outside a Function definition 
+is a global variable and it's value is accessible and modifiable throught your 
+program.
+
+
+Local Scopr:->
+a Variable that is Declared inside a Function Definition is 
+local. it created destroy every time  the function 
+is executed  and it can not be accessed by any code outside 
+the function .inside a function  if variable has not been de
+clared  with var  it is created as a global variable.
+
+[imp:before you didn't write code varible in var 
+
+it takes as programer Global vaible]
+
+imp[
+if there is function the inner Function can access outer 
+function's variables but outer function can not access
+inner function's variables.
+]
+
+Function arguments (parameters) work as local variables inside function.
+
+***************END*********************
+Variable Hoisting
+
+28/12/2022
+
+Hositing is javascript's default behavior of moving declaration 
+to the top of Function or the top of global context if
+outside a Function.
+
+ A varible can be used before it has been declared.
+
+only variable declaration are hoisted to the top not variable
+initialization.
+
+we write like This
+
+var a=10
+document.write(a+""+b)
+var b=20
+
+complie phase
+var a=10;
+var b;
+ document.write(a+""+b)
+b=20;
+
+*)Closure in JavaScript
+
+a closure is a Function having access to parent scope.
+it preserve the data from outside 
+
+a closure is an inner Function that has access to outer (enclosing)
+function's variable
+
+For every closure we have three scope
+1)Local Scope
+2)outer Function scope
+3)Global Scope
+
+imp:-nested Function is calles closure
+ <script>
+ function show(){ // outer function can not access variable of innner function
+            
+ var j="j a local variable of function";
+document.write(j+"<br>");
+function innerFunction(){
+ var k=" K This is inner Function of variable";
+ document.write(k+"<br>");
+ document.write(j+"<br>"); // These are  happeing here  closire
+  // if inner function accessing outer function varible is called Closure 
+}
+innerFunction()
+ }
+show();
+</script>
+******************End************************
+
+29/12/2022
+
+
+*)Function Expression
+
+When  we create Function and assign it to a variable known as Function 
+Expression.
+
+imp:-you can't call functon expression before function definitions
+2)Function expression in javascript are not hoisted unlike 
+declarations.
+f
+
+var myFunc=function show(){
+document.write("geekyshows");
+}
+myfun();
+  <script>
+    // Function Expression 
+    var myfun= function display(){
+        document.write("This is function display ketan ");
+    }; // declration function expression 
+    myfun();
+</script>
+
+
+*)Anonymous Function
+Anonymous function allow the creation of function 
+which have no specified name
+
+*)can be stored in a variable
+*)can be retured in a Function
+*)can be pass in a Function
+
+var a =function (){
+document.write("Geekyshows")
+
+}
+a();
+
+<script>
+    //anonymous Function 
+var disp=function(){ // which have no specified name
+    document.write("This is function anonymous");
+
+};
+disp();
+</script>
+
+*)Passing Anonymous Function as Argument 
+
+<script>
+    //passing anoynoms function as arguments
+    function disp(myfun){
+        return myfun();
+    }
+    document.write(disp(function(){
+        return "passing anoynoms function as arguments";
+    }))
+</script>
+<script>
+    //Returning anonymous Function 
+    function display(a){
+        return  function(b){
+            return a+b;
+
+        };
+    }
+    var af=(display(10))
+    document.write(af(20))
+</script>
+**********************End******************************
+30/12/2022
+
+an arraow Function expression (Previously and now incorrectly 
+known as fat arrow function)has a shorter syntax compared to
+function expression arrow Function are 
+always anonymous.
+
+<script>
+    //Arrow Function
+var myfun=()=>{
+    document.write("This is Arrow Function");
+};
+myfun();
+</script>
+<script>
+    //Arrow Function with paramertr no need mention curely braket and direct pass parameters
+    //if we can pass two parameters we have to give a curely bracket
+    var myfun=(a,b)=>{document.write(a,b)}
+    myfun(20,40);
+</script>
+
+<script>
+    //Function parameter with default 
+    var myfun=(a,b=90)=>{
+        document.write(a,b)
+    };
+    myfun(60);
+</script>
+
+<script>
+    //Arrow Function pass with rest parameters
+    
+    var myfun=(a,...ketan)=>{
+        document.write(...ketan)
+    }
+    myfun(10,20,30,40,50);
+
+</script>
+
+*)Immediately Invoked Function(IIfE)
+IIFe (Immediately Invoked Function Expression)
+is a javascript Function that runs as soon as it 
+is defined.
+
+it is design pattern which  is also known as self Executing 
+anoynomous function and contains twos major parts 
+.The first is the anonymous function with lexical Scope
+enclosed within the Grouping Operator().
+This is Prevents accessing varibles within the IIFE 
+as well as Polluting the Global Scope.
+
+imp:it is call itslef.
+
+
+The Second part is creating the immmediately Executing 
+function  expression (),though which javascript Engine 
+will directly interpret the Function 
+
+EX:-
+(Function(){Document.write("This is IIFE");}();
+    <script>
+        //immediately invoked Function
+        (function(...ketan){
+            document.write("This is IIFE Function",...ketan);
+
+        })(10,20,30,40,50)
+
+    </script>
+*****************END**********************************
+31/12/2022
+
+*)type of Operator 
+The type of operator is used to get the data type(returns as string)
+of its Operand.The Operand can be either a Literal or data structural such 
+as variable a function  or an object.
+
+*)Undefined
+
+The Undefined type is used for variable or object property 
+that either  do not exist or have not been assigned a Value
+an undefined type can have is undefined type
+
+var a;
+document.write(a); //Not Assigned a value:-Undefined
+document.write(b); //Not Exist -Undefined
+
+*)Null
+The null value indicates an empty value;
+it is essentially a plceholder that represents
+nothing The null value is defined as empty so 
+using type of Operator on a varibale holding 
+null shows its type to be object.
+
+var a= null 
+document.write(a+"<br>")
+document.write(typeof(a)+"<br>")
+
+*)Difference between Undefined and Null in JavaScript
+
+Undefined  means the value hasn't been set whereas 
+null means the value has been set to be empty.
+
+*)var let and const Keywords in JavaScript
+
+var :-IMP[This is global Scope]
+The Scope of variable declared with var is its 
+current execution context which is either 
+enclosing function or for variables 
+declared outside any Function.
+
+imp:[windows object property banatay ]
+windows object globally object ahe it conatins
+property and methods
+
+
+
+let:[limited of block scope][block cha bahera 
+dead hotay scope]
+
+let allows you to declare variables that 
+are limited in scope
+to the block statment or expression on 
+which it is used.
+
+Const:-imp:[value can't be changed][not reassign]
+The Declration creates a Constant whose scope can be 
+either global or local  to the block 
+in which it is declared.
+global constant do not become property of
+windows object unlike var varibles. an initializar 
+for a constant is required that is you must 
+specify its value in the same statement in which 
+it's declared which can't be changed later.
+*******************Ends**************************************
+2/02/2023
+what is object oriented Programing language
+is model we have to write code in that model
+
+object-oriented programing (oop)is programing 
+language model organzied around object rather than action
+and data rather than logic.
+
+1)What is Encapsulation 
+
+a aka class madhe encapusaulte karatay private
+b
+c
+name conflict hounaye manuna aapan encapsulation 
+used karato
+
+2)What is Abstraction?
+jo thing important ahet te dhakhavna baki cha 
+thing la hide karana
+
+exmple of :-
+mobile functionality
+
+3)What is Inheritance
+
+4)What is Polymorphism?
+
+
+press button (){
+}
+ 1  block blance
+2   block validate
+3    block how much internet data
+4   block to press customer care input 
+
+it means one function but according input we will decide 
+which block can be executed.
+**********************END******************
+Objects
+an object is a collection of property 
+and a property's value can be a function 
+in which case the property is known as a method
+in addition to object that are predefined in 
+the browser you can define your own objects.
+
+Type of objcets
+1)User Defined Objects
+Thses are custom objects created by programmer to bring 
+structure  and consistensy to a particular programing task
+
+2)Native object:
+These are provided by javascript language
+itslef like string,number,boolean,function,
+date array,object,math,Regexp,Error as well as
+object that allows createion of user defined the objects
+and composite types.
+
+3)Host objects
+
+4)Document objects
+
+*)Object Literal in JavaScript
+
+*)Usinng object Literal 
+sytax :-
+var object_name={}
+
+var fees={};
+
+ when  you write multiple word  key quotation
+
+fees["anil deshmukh"]=400;
+
+we can access the fess["anil deshmuh"];
+
+when we have to pass the fees["total"]=function(){
+return(100+200+300)}; This is method 
+
+*)Object Constructor in JavaScript 
+
+*)using  object Construcor 
+
+var anil=new anil(); // This is constructor 
+
+Accessing Properties
+
+a Property of an object is some piece of named data in contains
+Thses are acccessed with dot opeator
+applied to an object alertnatively to the dot operator is 
+array[] operaor.
+
+syntax:
+object_name .property name
+
+***********************END***********************************
+// Adding property to object from outside
+var fees={
+name:"rahul",
+rollno:19,
+subject true,
+}
+fees.surname="deshmukh"
+
+//This is adding to after  subject property 
+
+//Adding method to object 
+
+fees.sum=function(){return console.log("this is anonyms function")};
+
+*)Deleting Properties in JavaScript
+delete operator is used to delete instance properties
+syntax:
+delete  object_name.property_name
+
+after removal with delete operator the property 
+has the undedined value
+
+delete fees.nam	e;
+
+ // this is delete
+ property we can delete property any object
+
+*)Factory function 
+When a function returns an object we call it a factory function
+it can produce object
+instance without new keyword or class
+
+imp: if we are writing code again again 
+then we can use factory function 
+
+
+
+*)Factory function with parameter 
+
+         function mobile(model_no){
+                return{
+                    model:model_no,
+                    price:function(){
+                        return "Rs:500";
+                    }
+
+                };
+               
+
+              }
+            var samsaung=mobile('samsung');
+            var micorosoft=mobile('micorosoft');
+            var gfive=mobile('micorosoft');
+            var remi=mobile('remi');
+            var oneplus=mobile('oneplus');
+
+            document.write(samsaung.model +""+samsaung.price())
+            document.write(micorosoft.model +""+micorosoft.price());
+            document.write(gfive.model +""+gfive.price());
+            document.write(remi.model +""+remi.price());
+            document.write(oneplus.model +""+oneplus.price());
+
+1)Callback Function in JavaScript
+a callback function is a function (it can be any function 
+Anonymous Function,Arrow Function) passed into another 
+function as an argument, which is then  invoked inside
+the outer function to complete some kind of rotine
+or action.
+
+there are two types of callback function 
+1)asynchronous function
+2)synchrounuous function
+
+synchronous:-it waits for each operation 
+to complete after that it executes the next operation.
+
+    function show(a){
+        console.log("This is show function"+a)
+    }
+    function display(callback){
+        var a=101;
+        callback(a);
+    }
+    display(show);
+    
+    console.log("end") //This is sychronous*
+
+asynchronous:it never waits for each 
+operation to complete rahter it executes
+all operation in the first GO only
+
+   setTimeout(function show(){   
+// this is sychronous method
+        console.log("This is am showing function")
+    },5000)
+    console.log("End");
+*******************END***********************
+map()method
+The map() method creates new array with result of
+calling a provided function on every element in
+calling array 
+
+map calls a  provided callback function once 
+for each element in an array in oorder 
+and returns a new array from the result.
+
+map(callback(currenvalue,index,array),thigarg)
+
+   var fees=[
+    {price:200,product:"redmi"},
+    {price:300,product:"yellow"},
+    {price:400,product:"red"},
+    {price:500,product:"green"},
+    {price:600,product:"purple"}
+
+    ]
+    var anil=fees.map(value=>value.price);
+    console.log(fees)
+    console.log(anil)
+
+*)Promise and Async Await in JavaScrip
+a promise is an object represting the eventual 
+completeion or failure of an asychronous operation.
+
+a javascript promise object conatsins both the
+producing code  and calls to the consumeing code
+it can be used to deal with  asychronous opration in
+javascript
+
+promise state:-
+
+1)pending:-initial state,notyet fulfilled or rejected
+2)fulfilled/Resolved-promise completed
+3)Rejected-Promise Failed
+*************************************End********************
+*)Constructor in JavaScript
+
+object instance are created with constructor with which are bascially
+speacial function that prepare new instance of an object for use
+
+
+imp:this keyword is pointer to instance of an object.
+
+*)Check of Properties Exits
+1)Type of Operator
+
+
+2)in operator
+syntax:if('key' in object_name)
+
+3)hasOwnProperty
+syantax:if(object_name.hasOwnProperty("key"))
+
+2)For in loop
+The for loop is used to loop 
+throught an object's property.
+syntax:-for(var varivle in object_name)
+
+*)File system
+The fs module enables interacting with file system
+in a way modeled on standard POSIX
+function 
+
+1)Promise Based API
+1)const fs= require('fs/promises');
+2)import *as fs from 'fs/promises';
+
+
+2)callback api (asychronus API)
+3)Synch API
+******************End**********************
+class:a specific category can be defined as class
+
+define class
+we define class in javascript using custom constructor 
+
+
+if you are assign private property you can not access 
+outside of class 
+like this
+we have to only access method of that private method
+
+
+Prototype in JavaScript 
+
+prototype is superclass 
+
+How to iterate Instance and 
+Prototype Member using for in Loop in JavaScript
+
+
+Prototype Object in JavaScript
+
+we can achieve the multipleinheritance
+with help of prototype object
+
+
+Every object is associated with another object 
+in javascript.
+*********************END***********************************
+9/02/2023
+
+How Prototype Works in JavaScript
+
+always imp:when we run always create two 
+objetcs
+
+1)function object
+2)prototype objets
+
+*)Prototype Inheritance in JavaScript 
+we can achieve Inheritance using prototype in javascript
+
+class in inherit kela jata other language 
+but we can achieve in prototype method in inhrita 
+kela jatay 
+**************12/02/2023****************************
+*)Method Overriding in JavaScript
+
+<script>
+   //method Overriding 
+   function mobile(){
+
+   }
+   mobile.prototype.show=function(){
+    return "Super Class Method";
+   }
+   function samsung(){
+      
+   }
+   samsung.prototype.show=function(){
+    return "Sub Class Method";
+   }
+   var sam=new samsung();
+   var sam1=new mobile();
+   document.write(sam1.show())
+</script>
+
+*)Static Method in JavaScript
+//static method
+        class mobile{
+            static disp(){
+                return"This is static method";
+            }
+        }
+        //var sam=new mobile();// we can Not create object
+       // document.write(sam.disp());
+
+*)MultiLevel Inheritance in JavaScript 
+//super calss
+ var Mobile=function(){
+    this.a=10;
+ }
+ Mobile.prototype.z=30;
+ //subclass
+ var samsung=function(){
+    Mobile.call(this);
+    this.b=20;
+ }
+ var galaxy=function(){
+    samsung.call(this)
+    this.c=100;
+ }
+
+ var m= new Mobile();
+ var s =new samsung();
+ var g =new galaxy();
+
+ document.write("Galaxy Object can Access<br>");
+ document.write("Mobile A:"+g.a+"<br>");
+ document.write("samsaung B:"+g.b+"<br>"); 
+ document.write("Moible protoype z:"+g.z+"<br>");
+
+ document.write("Samsaung Object can Access<br>");
+ document.write("Mobile A:"+s.a+"<br>");
+ document.write("samsaung B:"+s.b+"<br>"); 
+ document.write("Moible protoype z:"+s.z+"<br>");
+
+ 
+ document.write("Mobile Object can Access<br>");
+ document.write("Mobile A:"+m.a+"<br>");
+ document.write("samsaung B:"+m.b+"<br>"); 
+ document.write("Moible protoype z:"+m.z+"<br>");
+**************************End***************************
+13/02/2023
+*)Class Inheritance
+class father{
+
+}
+class son extends Father{
+
+}
+*)Inherit Built in object
+1)Date
+2)String
+3)Array
+
+class Father{
+showMoney(){
+return "Father Money<br>"
+}
+class Son extends Father{
+showsMoney(){
+return"Show Money<br>"
+}
+var s =new Son();
+}
+*)Array In javascript
+this is createing array
+a=[]; this is create empty array
+
+a[42]="jay"
+
+javascript array madhe memory generate teacha hotiye jeva 
+taymadhe value assign hotay
+
+note:by default array start with index =0;
+*********************************END***************************
+14/02/2023
+
+IMportant array point
+1)javascript arrays are zero indexed :the first element of an
+array is at index
+2)using an invalid numbers returns undefined.
+3)arrays can not use string as element indexes but must 
+use integers
+4)There is no associative  array in javascript.
+
+1)Removit ng Array elements
+Array element can be removed using delete operator.
+This is operator sets the array element it is invoked 
+on to undefined but does'nt change the array length.
+
+delete array_name[index];
+
+*)length Property 
+The length retrieves the index of the next avaiable 
+position at the end of array. The length property is
+automatically updated as new Element are added to the 
+array. for this reason length is commonly used to 
+iterate through all element of an array.
+
+var geek=["anil","vishal","ketan","priva"]
+
+length property start at 1 
+
+1)forEach Loop
+The forEach calls a provided function once 
+for each element in an array in order 
+
+array.forEach(functon(value,index,array){
+
+}
+
+value:-it is current value of index.
+index:-array's index number.
+
+***************************************END************************
+15/02/2023
+*)For of loop  it is used only object not a array 
+The for loop of statement creates a loop iterating over 
+iterable objects
+
+*)How to get input from user in Array JavaScript
+
+You can get input from user in an empty array.
+
+*)MultiDimensional Array in JavaScript 
+
+Multidimentional Array is array of arrays
+ 
+1)Multidimentional array can be 2D,3D,4D etc
+       //Create Multidimentional Array 
+       var geek=[
+        ["Rahul","dell",10],
+        ["Sonam","Hp",20],
+        ["sumit","zed",30]
+    ];
+    for(let i=0; i<3; i++){
+   for(let j=0; j<3; j++){
+    document.write(geek[i][j]+"");
+
+   }
+   document.write("<br>");
+
+    }
+*******************************END**********************
+16/02/2023
+How to Create Empty 2D Array in JavaScript
+ var geek=new Array([],[]); //using Array Constructor 
+        for(let  i=0; i<2; i++){
+        for(let j=0; j<3; j++){
+            document.write(i+""+j +" ");
+        }
+        document.write("<br>")
+*********************
+*)How to get Input from user in 2D Array JavaScript
+
+    var geek=[];
+       var rows=2;
+       var cols=3;
+
+       for(let i=0; i<rows; i++){
+        geek[i]=[];
+       }
+       for(let i=0; i<rows; i++){
+        for(let j=0; j<cols; j++){
+        geek[i][j]=prompt("Enter User Names")
+        }
+        document.write("<br>")
+        
+       }
+
+       //display Values
+       for(let i=0; i<rows; i++){
+        for(let j=0; j<cols; j++){
+     document.write(geek[i][j]+" ")
+        }
+        document.write("<br>")
+        
+       }
+***************************************END********************
+18/02/2023
+
+*)Date in JavaScript 
+The Date Object Provides a Sophisticated set Of Methods 
+ for Manipulating Dates and times.
+
+Creating Date Object
+
+Date Object Are Created with new Date() Constructor.
+data object Created By Programmers are static. They do not 
+contain a ticking clock.
+new Date();
+new Date(milliseconds)
+new Date(year,month,day,hours,minutes,seconds,milliseconds)
+new Date(dataString);
+*******************************END****************
+18/02/2023
+Create Date Object
+new Date():-new Date() Creates a new Date Object
+with Current Date Time.
+
+var tarikha=new Date();
+
+*)new Date(mileseconds):-it creates a new Date  object as
+january 1 1970
+
+
+var tarikh=new Date(8640000)
+
+*)Createing Date Object
+new Date(year,month,day,hour,mintues,seconds,millieseconds)
+
+2)GetDateMethods
+1)getFullYear() :-get the year as a four digit number
+
+2)getMonth()
+3)getDate()
+4)getHours()
+5)getMinutes()
+6)getSeconds()
+7)getMilliseconds()
+8)getTime()
+9)getDay()
+
+Month starting at -0 
+and day at starting at 0 like sunday is starting at -0 
+
+*)Convert date to string 
+if you want to create a string in standard format 
+date provide three methods
+
+toString()
+toUTCSString()
+toGMTString()
+
+toUTC String and toGMTString() format the string 
+according to internet (GMT) standard Wherars toString 
+creates String according to LocalTime.
+
+*)Document Tree in JavaScript
+whatever element we can say it  element node 
+
+
+**********************END********************************
+20/02/2023
+getElementById Method in JavaScript
+
+length property countr at 1 
+not a 0 
+********************************End********************
+*)querySelector("css Selector)
+The Method query selector()returns the firstElement
+match of the query selector or group selector 
+if not macth found null is returned.
+
+imp:fist come first get
+*****************************************END***********************
+24/02/2023
+
+queryselectory means it is tagName
+*)node list always return 0 1 2 3 4
+but length is return 4 
+*)Loop in queryselectoryall("Css_Selector")
+
+*)Web Page Properties in JavaScript
+if you will put console.dir(document);
+*)if you will type 
+conlog.log(document.all)
+you will display all tag in document 
+
+*)Properties of Node Object in JavaScript
+
+if konati property node object cha property asel te jar inheriat houn 
+1)document 
+2)element 
+3)charaecter data 
+
+above three are acquire 
+hoila
+
+node object represents a single node in document tree 
+1)nodeName
+2)nodeValue
+3)nodeType
+4)textContent
+5)parenNode
+6)childNodes
+7)firstChild
+8)lastchild
+9)previousSibling
+10)nextSibling
+************************************************END***********
+25/02/2023
+1)nodename
+2)nodevalue
+3)nodetype
+
+1)nodeName:-The node name readonly property returns 
+name of the current node as a string.
+
+2)nodeValue:-The nodevalue proprty
+ returns or set the value of
+current node.
+
+3)The Readyonly Node.nodetype proprty
+ that represents the type of
+node
+
+ //document
+       /* document.write("---------------Document-------------");
+        document.write(document.nodeName +"<br>");
+        document.write(document.nodeValue +"<br>");
+        document.write(document.nodeType +"<br>");
+
+        //Element
+        document.write("---------------Element-------------");
+        var elm=document.getElementById("myid");
+        document.write(elm.nodeName +"<br> <br>");
+        document.write(elm.nodeValue +"<br>");
+        document.write(elm.nodeType +"<br>");*/
+        
+        //Text
+        document.write("---------------text-------------");
+        var text=document.getElementById("myid");
+        document.write(text.firstChild.nextSibling.nodeName +"<br> <br>");
+        document.write(text.firstChild.nextSibling.nodeValue +"<br>");
+        document.write(text.firstChild.nextSibling.nodeType +"<br>");
+ <h1 id="myid">
+        we are learning js<!-- This is comment-->
+
+    </h1>
+    <p id="myid1"> I am paragaph</p>
+    <script>
+        //document
+       /* document.write("---------------Document-------------");
+        document.write(document.nodeName +"<br>");
+        document.write(document.nodeValue +"<br>");
+        document.write(document.nodeType +"<br>");
+
+
+        //Element
+        document.write("---------------Element-------------");
+        var elm=document.getElementById("myid");
+        document.write(elm.nodeName +"<br> <br>");
+        document.write(elm.nodeValue +"<br>");
+        document.write(elm.nodeType +"<br>");*/
+        
+
+        
+
+        //comment
+       /* document.write("---------------text-------------");
+        var text=document.getElementById("myid");
+        document.write(text.firstChild.nextSibling.nodeName +"<br> <br>");
+        document.write(text.firstChild.nextSibling.nodeValue +"<br>");
+        document.write(text.firstChild.nextSibling.nodeType +"<br>");*/
+
+
+                //comment
+         document.write("---------------text-------------");
+        var text=document.getElementById("myid")
+        .firstChild.nodeValue="This is new Value";
+        document.write(text);
+       // document.write(text.firstChild.nodeName +"<br> <br>");
+       // document.write(text.firstChild.nodeValue +"<br><br>");
+       // document.write(text.firstChild.nodeType +"<br>");
+
+    </script>
+**********************END*******************
+Properties of Attribute Object in JavaScript
+
+Attribute property use karun aapan 
+name and value info kadu shakato
+
+//Attribute property Name and Value
+document.write("---------------Attribute property Name and Value-------------<br>");
+var result=document.getElementById("myid");
+//var getattr=result.attributes[0].nodeName; //return id 
+var getattr=result.attributes[0].value; //return value of id 
+document.write(getattr);
+/*  for(let i=0; i<result.attributes.length; i++){
+ document.write(result.attributes[i].name+"<br>");
+ document.write(result.attributes[i].value+"<br>")
+}*/
+********************END*******************
+27/02/2023
+Difference between Node of an Element and 
+Element Node of an Element in JavaScript
+
+we have to cover first 
+
+*)setTimeout and clearTimeout Methods in JavaScript
+
+2000-2secda
+
+       setTimeout(() => {
+            document.getElementById("myid").style="color:blue";
+        }, 5000);
+
+1)clearTimeoutMethod:-The clear Timeout Method
+cancels timeout previously  establiged by calling 
+set Timeout () The Id value returned by  
+
+cancel karaty  clearTimeout() Method
+
+
+       //settimeoout method
+
+      var myfun=  setTimeout(() => {
+            document.getElementById("myid").style="color:blue";
+        }, 5000);
+
+        function cleartimeout(){
+            clearTimeout(myfun);
+        }
+        document.getElementById("mybtn").addEventListener("click", cleartimeout)
+        </script>
+*)setInterval :-repeately 
+add karata jatay content 
+        var anil=setInterval(()=>{
+            document.getElementById("myid").textContent+="Hello";
+        },2000);
+
+      function sunil(){
+            clearInterval(anil);
+        }
+        document.getElementById("mybtn").addEventListener("click",sunil);
+*********************END*********************
+*)Window Events in JavaScript 
+1)onload="alert("Hello window");
+**************************END*********************
+28/02/2023
+Form Handling in JavaScript 
+javascript provides access to the form within an html 
+document throught the form object known as HTMLFormElement
+in the DOM.Which is a child of the document object.
+
+Accessing Forms
+Javascript provides various way of accessing form 
+1)document.forms[index_number]:-it returns collection of 
+form in document.
+2)document.forms["name_attribute_value"]:-we can use 
+name attribute of the form
+3)document.name_attribute_value:- we can use name attribute 
+of the form with dot as well.
+4)getElementById("id"):-if form as an unique id we 
+can use it.
+
+*)Access Form Fields
+if form fields have unique id then it is possible to access
+them using the getElementById()Method However. There are some
+other ways
+
+1)elements[]:-It contains collections of the fields.
+syntax:-document.form_name.elements[index_number]
+document.form_name.elements["name_attribute_value	"]
+       //with index number 
+       // var result=document.forms[0];
+      /// var result=document.forms[1];
+        //console.log(result);
+
+        //with name attribute using square barcket 
+
+       //var result= document.forms['myForm'];
+       //console.log(result);
+       /*var result=document.getElementById("username_id");
+       console.log(result);
+       console.log(result.name);*/
+
+       //with Element [index number]
+
+      // var username=document.myForm.elements[0];
+      // console.log(username.id);
+
+      //with name attribute value 
+      // var username=document.myForm.elements["m_username_field"];
+       // console.log(username);
+
+
+             //with name of form directly access value 
+      var username=document.myForm.username_id;
+      username.value='rohit'
+***********************END***********************
+01/03/2023
+    <form action="" name="myForm">
+        username:<input type="text" name="m_username_field"><small id="u_small"></small><br><br>
+        <input type="submit" name="m_sbtn" value="submit">
+    </form>
+
+        function validate(){
+            var ptn=/^([^0-9\W]*)$/;
+            if(ptn.test(document.myForm.m_username_field.value)){
+                document.getElementById("u_small").textContent="User is valid";
+                document.getElementById("u_small").style.color='green';
+            }else{
+                document.getElementById("u_small").textContent="User is invalid";
+                document.getElementById("u_small").style.color='red';
+            }
+        }
+        document.myForm.m_username_field.addEventListener("keyup",validate);
+
+************************END***********************
+
+*)addEventListener in JavaScript
+This method is introdued by dom2 used to engage an event handler in page.
+
+object.addEventListener(event,listener,capturePhase)
+
+why should we use addEventListener
+1)It allows you to bind multiple handlers to an object for the same event.
+2)it enables you finger grained control of the phase when the listener is activated (Capture or Bubbling)
+3)It works an any DOM element not just html element
+
+   <button id="btn"> click me</button>
+    <script>
+        function disp1(){
+            alert("button clicked 1");
+        }
+        function disp2(){
+            alert("button clicked 2");
+        }
+       var btn= document.getElementById("btn")
+       btn.addEventListener("click",disp1)
+       btn.addEventListener("click",disp2)
+
+
+ 
+    </script>
+
+imp:it will overcome problem of overwrite
+******************END****************************
+2/03/2023
+
+*)	 in JavaScript
+This method is used to remove handlers with  same arguments
+given when the event was added.
+
+localstorage
+
+Methods
+1)setItem
+2)getItem
+3)RemoveItem
+
+differnce sesstion and localstorage
+
+
+localstorgae :expiration date nasatiye
+
+and 
+
+session storage 
+
+browser che windowa closed kela banda hotay 
+
+new tab tari open kela tari te expiray hotay
+    <button id="btn">Remove localStorage item</button>
+
+    <script>
+        //localstorage
+        //window.localStorage.setItem('username','ketandeshmukh');
+       // window.localStorage.setItem('email','deshmukhketan@647@gmail.com');
+       var btu=document.getElementById("btn")
+       function remove(){
+  //  localStorage.removeItem('email'); // remove method remove one by one
+
+  localStorage.clear();  // Clear all data
+
+       }
+      
+  btu.addEventListener("click",remove)
+        
+     </script>
+*********************END**************************
+3/03/2023
+session Storage vs locastorage
+difference betw
+
+session storage is property of window object
+
+syantax:-
+window.sessionStorage(key,value)
+
+1)setItem
+2)getItem
+3)key
+4)removeItem
+
+    <h1>Session Stroage</h1>
+    <button id="btn">Remove Stroage Item</button>
+
+    <script>
+        //session storage
+        function show(){
+            sessionStorage.removeItem("username","ketandeshmukh");
+        }
+
+
+        sessionStorage.setItem("username","ketandeshmukh");
+        var btu=document.getElementById("btn");
+        btu.addEventListener("click",show);
+        if(sessionStorage.clear()){
+            var result =sessionStorage.getItem("username");
+            
+            document.write(result)
+
+        }
+       
+ 
+        
+     </script>
+**************code-End***********************
+*)Exception Handling in JavaScript
+Exception Handling
+1)try
+2)catch
+3)finally
+4)throw
+
+
+  //Excetion Handling 
+        try{
+           // add();
+            document.write("Skipped Code");
+        }
+        catch(e){
+          /*document.write("Message:"+e.message+"<br>")
+          document.write("Name:"+e.name+"<br>")
+          document.write("stack:"+e.stack+"<br>")*/
+
+          document.write("Function defined nhi hai")
+
+        }
+        finally{
+            document.write("get Excuted wether there is excetion or not ")
+        }
+********************END*********************
+
+      //Excetion Handling 
+       function getReactArea(w,h){
+        if(isNaN(w)||isNaN(h)){
+            throw "Paramter is not number";
+
+        }
+       }
+       try{
+        getReactArea(10,'A')
+       }
+       catch(e){
+          document.write(e);
+       }
+       document.write("I have no idea what going on above")
+
+************************END******************************
+6/03/2023
+//default export 
+/*import Nokia from './anil.js';
+const n =new Nokia();
+n.volumUP();*/
+
+//import show from "./anil.js";
+//show();
+
+import a from "./anil.js";
+console.log(a);
+
+
+/*export default class Nokia{
+    volumUP(){
+        console.log("This is volumup");
+    }
+}*/
+
+//export function 
+
+  /*function show(){
+    console.log("Hello module show Function here");
+}
+export default show;*/
+
+//export varible
+
+  const a=10;
+  export default a;
+**************************END*****************************
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>This is main </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script type="module" src="sunil.js"></script>
+
+</head>
+<body>
+    <h1>E6 export and import module system </h1>
+
+    </body>
+</html>
+***************************END*****************************
+7/03/2023
+Strict-Mode in JavaScript
+
+    <h1>strict Mode</h1>
+    <script>
+        "use strict";
+       // var  a=10;
+       // document.write(a);
+    //console.log(a);
+    function show(){
+        "use strict";
+      var   a=30;
+        var b=40;
+       var  c=a+b;
+        console.log(c)
+    }
+    show();
+
+    </script>
+***********************END**********************
+Array Destructuring in JavaScript
+var a=[10,20,30];
+[x,y,z]=a;
+
+Array destructing wrote code in right side alwasys
+
+when Destructing array  we use thier index/position in 
+assignement.
+
+var a=["javascript","sixmonth","Geekshows"];
+var [coursename,duration,tutor]=a;
+var [coursename,,tutor]=a;
+
+   <script>
+    var a=[10,20,30];
+    [x,y,z]=a;
+document.write(x);
+document.write(y);
+document.write(z);
+var s=["javascript","sixmonth","geekshows"]
+
+var [coursname,duration,name]=s;
+document.write(coursname+"<br>");
+document.write(duration +"<br>");
+document.write(name+"<br>");
+
+   </script>
+******************END*************************
+8/03/2023
+
+Array Passing to a Function
+var a=[10,20,30]
+function show(){
+conslog.log(value1)
+conslog.log(value2)
+conslog.log(value3)
+}
+show(arr);
+
+Nested Array Destructing 
+
+var a=["javascript","sixMonth","Geekshows",["Rahul","Sonam"]
+
+var [coursname,duration,tutor,[stu1,stu2]]=a;
+
+*)Object Destructuring in JavaScript
+when Destructing object we use key as varible names.
+This is how  javascript knows which property of object we want 
+to assign.
+
+    <h1>Object destructing </h1>
+
+   
+   <script>
+   var course={
+    courseName:"javascript",
+    duration:"sixmonth",
+    tutor:"geekshows"
+   };
+   var {courseName:cname,duration:time,tutor}=course;
+   console.log(cname);
+   console.log(time);
+   console.log(tutor);
+
+   </script>
+****************END**************
+09/03/2023
+Object Passing to Function
+
+   <script>
+   var course={
+    courseName:"javascript",
+    duration:"sixmonth",
+    tutor:"geekshows"
+   };
+
+  function show({courseName,duration,tutor}){
+    console.log(courseName);
+   console.log(duration);
+   console.log(tutor);
+  }
+  show(course);
+</script>
+********************END*****************
+object retruining From a function 
+  var course={
+    courseName:"javascript",
+    duration:"sixmonth",
+    tutor:"geekshows"
+   };
+   function show(z){
+    return z
+   }
+  var {courseName,duration,tutor}=show(course)
+  console.log(courseName);
+***********************END****************
+Nested Object Destructing 
+  var course={
+    courseName:"javascript",
+    duration:"sixmonth",
+    tutor:"geekshows",
+    stuent:{
+        stu1:"Rahul",
+        stu2:"Ketan"
+    }
+   };
+var {courseName,duration,tutor,stuent:{stu1,stu2}}=course;
+console.log(stu1);
+*******************END********************
+Promise and Async Await in JavaScript
+imp:callback can be Asych and sych 
+
+
+synchronous behave like  This Exmple
+   console.log("start");
+    function show(){
+        console.log("this is inside the function");
+    }
+
+    show();
+    console.log("End");
+******************END********************
+asynchronous behave like  This Exmple
+
+    console.log("start");
+  setTimeout(()=>{
+    console.log("This is asychronous function")
+  },2000);
+
+    console.log("End");
+***************************END*****************
+This is synchronous callback
+  console.log("start");
+    const roll=[1,2,4,5,6,7,8,9,10];
+    roll.forEach(r=>{
+        console.log(r);
+    })
+    console.log("End");
+*********************************END*******************
+This is overcome problem of asychronous way 
+
+    console.log("start");
+    function getName(name,callback){
+        setTimeout(() => {
+    console.log("This is callback Function behave")
+    callback (name);
+    }, 2000);
+
+    }
+    var nm=getName('ketan',(nm)=>{
+        console.log(nm);
+    })
+
+ 
+    getName()
+    console.log("End");
+***********************END****************
+21/03/2023
+How to Set Cookies into Client System using JavaScript
+
+it is necessery to key and value paire
+
+
+Optional Cookies Attributes
+1)Max age
+2)expires
+3)domain
+4)path
+5)secure
+
+ //set cookies
+       // document.cookie="username=ketan_deshmukh";
+      //  alert(document.cookie);
+        //max age
+        document.cookie="username=ketan_deshmukh; max-age="+60*60*24*10+"; path=/";
+        alert(document.cookie);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+		
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

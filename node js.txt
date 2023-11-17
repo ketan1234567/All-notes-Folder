@@ -1,0 +1,540 @@
+
+Node .js is javascript runtime built on chrome's V8 
+javascript engine.
+
+node js allows you to run javascript on the serve
+
+node.js also provides library of various javascript module 
+which help to develop web application.
+
+node.js was developed by ryan dahl in 2009
+
+node js is not a language or a Framewrok 
+
+it is runtime environement
+
+*)Advantage node.js
+1)open source
+2)event Driven
+3)very popular 
+
+you need to know
+1)javascript
+2)NPM
+
+*)we want run 
+npm i init -y
+npm mogoose
+npm mysqli 
+npm express (This is require)
+
+
+
+check node command node --version
+
+check npm --version
+
+
+1)REPL
+ for using tesing 
+
+_ last value return 
+
+
+if we can terminal we have to use 
+
+node file names
+
+npm init ne te pacakage json file tayara karatay 
+folder madhe
+
+
+Wrapper Module in Node JS (Hindi)
+
+********************End*******************
+*)Path Module in Node JS
+The path module provides utilities for working with files
+and directory paths.it can be accessd using 
+
+const path= require('path');
+
+1)basename();
+
+Exmple:-basename('/test/something.html','.html');
+
+
+2)dirname()
+
+3)join()
+
+4)extname()
+
+5)normalize(path)
+
+6)parse(path)
+
+7)isAbsolute()
+
+1)File System Module in Node JS
+
+1)Promise API 
+
+2)Callback API
+
+The callback APIS perform all operations asychronously without 
+blocking the event loop then invoke a callback function 
+upone compltetion or error
+************************************END***************
+20/02/2023
+
+Basic API 
+
+3)API With  MongoDB
+1)Make new File for API
+2)Import and use Mongo Config 
+3)Make API for Get data
+4)Test With PostMan
+5)Interview Questions
+1)can we pass body for get Method
+no never 
+2)can we pass query like params
+Yes you can pass
+
+*)IMPORT 
+when we create API we have use use Express 
+
+
+// request method we can use when we wnat get data from database with help of postman
+//respone Method jevala aapala serve manaje node js serve reply karela  API la
+*****************************22/02/2023************
+
+*)node js Post API Method
+Make Post Method for API
+send Data From PostMan
+getData in node js by request
+write a code for insert data in mongo DB
+Interview Questions
+can we put same url get or post 
+Yes we can put same Url in post
+
+
+*)Post Method
+
+*)Put Method 
+you have to use query paramas  
+and you have to pass req.body
+***************************END***********************
+23/02/2023
+
+Start With Mongoose 
+1)what is Mongoose
+node js connect karanasathi aka package ahe 
+
+2)Difference Between Mongoose vs Monogodb package
+Mongodb is limitation 
+but Mongoose are addtional features 
+
+3)Install Mongoose
+4)what is schemas
+1)API la validation laou shakato aapan 
+2)Filed control karu shakato aapan 
+3)database filed la validate karatiye
+5)what is model
+je aapn schemas throw validate krun filed define kelay
+ahe tayala use node js la moonnsoge 
+connect karatay.
+
+6)connect Node js and MongoDb with Mongoose
+
+Node .js is javascript runtime built on chrome's V8 
+javascript engine.
+
+node js allows you to run javascript on the serve
+
+node.js also provides library of various javascript module 
+which help to develop web application.
+
+node.js was developed by ryan dahl in 2009
+
+node js is not a language or a Framewrok 
+
+it is runtime environement
+
+*)Advantage node.js
+1)open source
+2)event Driven
+3)very popular 
+
+you need to know
+1)javascript
+2)NPM
+
+check node command node --version
+
+check npm --version
+
+
+1)REPL
+ for using tesing 
+
+_ last value return 
+
+
+if we can terminal we have to use 
+
+node file names
+
+npm init ne te pacakage json file tayara karatay 
+folder madhe
+
+
+Wrapper Module in Node JS (Hindi)
+
+********************End*******************
+*)Path Module in Node JS
+The path module provides utilities for working with files
+and directory paths.it can be accessd using 
+
+const path= require('path');
+
+1)basename();
+
+Exmple:-basename('/test/something.html','.html');
+
+
+2)dirname()
+
+3)join()
+
+4)extname()
+
+5)normalize(path)
+
+6)parse(path)
+
+7)isAbsolute()
+
+1)File System Module in Node JS
+
+1)Promise API 
+
+2)Callback API
+
+The callback APIS perform all operations asychronously without 
+blocking the event loop then invoke a callback function 
+upone compltetion or error
+************************************END***************
+20/02/2023
+
+Basic API 
+
+3)API With  MongoDB
+1)Make new File for API
+2)Import and use Mongo Config 
+3)Make API for Get data
+4)Test With PostMan
+5)Interview Questions
+1)can we pass body for get Method
+no never 
+2)can we pass query like params
+Yes you can pass
+
+*)IMPORT 
+when we create API we have use use Express 
+
+
+// request method we can use when we wnat get data from database with help of postman
+//respone Method jevala aapala serve manaje node js serve reply karela  API la
+
+*******************END**************
+24/02/2023
+Satrt With Mongoose
+
+1)what is Mongoose
+There is one type of  package which is it connecting mongoose to node js
+
+2)Difference between MongoDB vs Mongoose package
+There is addtional featues to Mongoose db 
+Like Model,scheme
+
+3)install Mongoose
+4)What is scheme
+1)we have addtional features 
+like validate of database fileds.
+
+2)Give a name like type of (string numnber )stricted 
+ validate karaty filed 
+5)what is model
+model is connect to Mongoose connect karaty
+6)connect with node js and MongoDB with Mongoose
+
+
+Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment.
+ Mongoose supports Node.js and Deno (alpha).
+
+Mongodb var kam karun tayani aka package tayar kela tayana chan nav 
+Mongoose
+***********************END*************************
+25/02/2023
+
+Post API With Mongoose
+make post Route
+get data in postman and save db
+interview question
+
+
+node js vs php 
+age of technology
+jevadi old tevadi stable astay 
+
+imp:node js internally use karaty javascript ko
+
+1)node js is costly aste 
+
+1)small project php
+2)big projects node js 
+
+1)speed
+2)performance
+3)request handeling 
+
+1)php :- php is working as sychronusly working 
+2)node js:- node js is handeling asychronously handeling 
+request
+************************END********************
+27/02/2023
+
+Search API in Node.js with MongoDB
+1)Make Simple GET Route for API
+2)Search with single Filed
+3)Search With Multiple Fields
+4)Test API
+5)Interview Question
+1)can we do search method with help of post 
+Yes we can use search method with help of post 
+
+***************Code***************
+app.get("/search/:key",async (req,resp)=>{
+ let data= await product.find(
+  {
+    "$or":[
+      {"name":{$regex:req.params.key}},
+      {"brand":{$regex:req.params.key}}
+    ]
+  }
+ )
+ console.log(req.params.key);
+  resp.send(data);
+  //console.log(data);
+})
+app.listen(5000);
+*****************************END******************8
+Upload File in node js 
+1)install Multer npm package
+2)Make Router for upload file
+3)write code for upload file
+4)interview Questions
+1)can we upload file withouut multer npm package
+Yes we can we have to use built function with help of
+****************************END**************************
+Most Important Topics
+
+*)Events and Event Emitter 
+in Node js one things is happening in event based 
+
+1)what is event and Event Emitter
+aka signal send asatay ki particlur code send kara do 
+
+node.js button kas banavataos throught API  call hotay 
+
+event meaning 
+2)make an event call it 
+3)Interview Questions
+****************END****************
+1/03/2023
+
+Node js Connect With Mysql 
+1)install Mysql Npm Package
+ npm i mysql 
+
+2)connect node js with Mysql 
+3)Get Data From Mysql 
+4)Interview Questions
+
+1)node js get Api with Mysql
+1)make config file
+2)make route for API
+3)get data from mysql
+4)interview Questions
+			
+
+const mysql=require('mysql');
+const con=mysql.createConnection({
+    host:"localhost",
+    user:"root",
+    password:"",
+    database:"test"
+});
+
+con.connect((err)=>{
+  if(err){
+    console.log("This is error");
+  }else{
+    console.log("connected");
+  }
+});
+module.exports=con;
+
+const express=require('express');
+const con =require('./config');
+const app=express();
+
+
+app.use(express.json())
+
+app.get("/",(req,resp)=>{
+    con.query("select * from users",(err,result)=>{
+        if(err){
+           resp.send("This is Error");
+        }else{
+          resp.send(result);
+        }
+    })
+
+});
+app.post("/",(req,resp)=>{
+    const data=req.body
+    con.query("INsert INTO users SET ?",data,(error,result)=>{
+        if(error) error;
+        resp.send(result);
+    })
+})
+app.listen(5000);
+*******************************END*********************
+PUT Methods
+app.put("/:id",(req,resp)=>{
+  const data=[req.body.name,req.body.password,req.body.user_type,req.params.id]
+  con.query("UPDATE users SET name=?,password= ?,user_type=? where id=?",data,(err,result,field)=>{
+   if(err) throw err;
+   resp.send(result)    
+  })
+})
+app.listen(5000);
+
+//interview question 
+//can i insert data if not updated it menas you have not that id the 
+//you have to insert with help of result.affectedRows like 0 is not inserted and 1 is inserted
+*******************END***********************************
+
+const express=require('express');
+//require('./config');
+const product=require('./product');
+const mongoose=require('mongoose');
+
+mongoose.connect("mongodb://127.0.0.1:27017/schooldb");
+
+const app=express();
+
+app.use(express.json());
+
+/*app.post("/create",async(req,resp)=>{
+ let data = new product(req.body);
+ let result= await data.save(); // every method send the return promises
+    console.log(result);
+    resp.send(result)
+});
+
+// get method
+app.get("/list", async(req,resp)=>{
+    let data= await product.find();
+    resp.send(data);
+})
+//deleted Method
+app.delete("/delete/:_id" ,async(req,resp)=>{
+    //console.log(req.params)
+    let data = await product.deleteOne(req.params);
+    resp.send(data);
+})
+
+//update record 
+app.put("/update/:_id",async(req,resp)=>{
+  let data=await product.updateOne(
+    req.params,
+    {
+        $set:req.body
+    }
+  );
+  resp.send(data);
+})*/
+//Saerch API Single Field with Multiple field
+
+app.get("/search/:key",async (req,resp)=>{
+ let data= await product.find(
+  {
+    "$or":[
+      {"name":{$regex:req.params.key}},
+      {"brand":{$regex:req.params.key}}
+    ]
+  }
+ )
+ console.log(req.params.key);
+  resp.send(data);
+  //console.log(data);
+})
+app.listen(5000);
+*****************END**************
+config files
+
+const mongoose=require('mongoose');
+const ProductSchema=new mongoose.Schema({
+    name:String,
+    price:Number,
+    brand:String,
+    category:String,
+
+});
+module.exports=mongoose.model('products',ProductSchema);
+******************END******************
+7/03/2023
+Template Engine in Express JS 
+popular Template Engine
+1)Ejs
+2)Pug
+3)Mustache
+4)Nunjucks
+5)Dust
+
+*)Install Template Engine
+npm install ejs
+
+
+app.js
+8)Setup Directory Where template files are located
+app.set('views','./views')
+
+*)Setup Template Engine to use
+app.set('view Engine' 'ejs')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
