@@ -482,15 +482,158 @@ _____________________________________________________END________________________
 *)Component to View 
 
 1)Interploation binding
+exmple:
+<h1>InterPloation Binding</h1>
+<span innerHTML="{{name_34}}"></span>
+
 2)property Binding
+exmple:
+<h1>property Binding</h1>
+<span [innerHTML]="name_34"></span>
+
+*)difference between interpolation vs property binding
+
+1)ts file
+
+  currentvalue=true;
+
+  enabledisable(){
+    this.currentvalue=!this.currentvalue;
+  }
+
+2)html file
+
+<button (click)="enabledisable()">enabledisable</button>
+
+<h1>InterPloation Binding</h1>
+<button disabled="{{currentvalue}}">interoBinding</button>
+<br><br>
+<h1>property Binding</h1>
+<button [disabled]="currentvalue">propertyBind</button>
+
+
 3)style binding (<button [style.font-weight]="isbold ?'bold':'normal'">style binding</button>)
-4)class binding 
+4)class binding <button [class]="classtoapply">class Bining</button>
+
 5)Attribute binding 
 
 *)View to Component 
+
 6)event binding 
 
-2)Two way Data Binding 
+
+
+
+
+
+2)Two way Data Binding  (custom binding)
+<h1>Two way Custom  Binding</h1>
+<input type="text" #textval [value]="_message" (keyup)="changesValue(textval.value)">
+Your Message{{_message}}
+
+3)Two way Data Binding
+
+<h1>Two way Binding</h1>
+<input type="text" [(ngModel)]="_message">
+Your Message{{_message}}
+______________________________________________________________________END___________________
+18/11/2023
+
+*)What is innerHTML?
+
+jara konata data asela aapala kade te jar aapala convert karayacha asela tar aapan 
+innerhtml vaparato 
+
+ts.file
+
+str="<h1>ketan deshmukh</h1>"
+
+html file
+
+<h1>innerHTML</h1>
+<span>{{str}}</span>
+<span innerHTML="{{str}}"></span>
+
+
+*)What is OuterHTML?
+when we use any element this outer HTML they can remove
+main element
+
+*)See Output in browser
+
+<h1>OuterHTML</h1>
+<span outerHTML="{{str}}"></span>
+_________________________________________________END__________________________________
+*)Pipes
+1)Built pupes
+1)lowercase
+2)uppercase
+3)Titlecase
+4)slice
+5)json pipe
+6)decimapipe
+7)percent pipe
+8)currency pipe
+9)Date Pipe
+10)async pipe (promise data la convert karatay real data madhe)
+
+exmple:
+
+welcome to {{title | uppercase}}
+
+
+
+2)custom pipes
+
+<br><br>
+<h1>{{title | reverse}}</h1>
+<br><br>
+<h1>{{para | limtword}}</h1>
+
+<br><br>
+<h1>{{para | limtword :40}}</h1>
+<br><br>
+<h1>{{para | limtword :35:'***********'}}</h1>
+
+
+1)Built-in pipes
+1)parametrized pipe
+exmple:
+welcome to {{title | slice :2:4}}
+welcome to {{title | slice :2}}
+
+jo pipe  parameter  accept karela tayala parameterized pipe
+2)chaining 
+aka data var la mutiple pipe laou shakato tayala cha chaining pipe manato
+
+angular madhe aapala as it is khi print karayacha asel tar 
+ we can use like this
+ <h1 ngNonBindable>Q1 vlue of {{title}}</h1>
+<p>minIntegerDigits=1 minFractionDigits=0 maxFractionDigits=3</p>
+<h1>{{12.34789568|number}}</h1>
+
+output:12.348
+_________________________________________________________END______________________________________________________
+*)what is services?
+we can use unit testing in services.
+1)module level services aapan banavato  tayacha object singletenon  tevato aapan 
+  providers: [services],
+
+2)component level services (every component it will create every object)
+
+*)interview question
+
+1)why we use of @Injectable()
+when we Inject anotehr type of services that time we can use 
+@Injectable dexorator()
+
+
+
+
+
+
+
+
 
 
 
