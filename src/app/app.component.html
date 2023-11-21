@@ -1,0 +1,34 @@
+<div style="text-align: center;">
+  <h1>Welcome to Sahosoft Technologies</h1>
+  <!-- <div>
+    <a routerLink="home">Home</a> |
+    <a routerLink="contactus">Contact US</a> |
+    <a routerLink="aboutus">About US</a> |  
+    <a routerLink="Student">Student</a> |
+  </div> -->
+
+  <!-- <div>
+    <a href="home">Home</a> |
+    <a href="contactus">Contact US</a> |
+    <a href="aboutus">About US</a> |  
+    <a href="Student">Student</a> |
+  </div> -->
+
+  <div>
+    <a routerLink="home">Home</a> |
+    <a routerLink="contactus">Contact US</a> |
+    <a [routerLink]="newabout">About US</a> |  
+    <a routerLink="student">Student</a> |
+
+
+
+    <!-- <a [routerLink]="['aboutus',101]">About US 2</a> |
+    <a [routerLink]="['aboutus',101,'Chandan Kumar']">About US 3</a> |
+
+    <button (click)="gotocontactus()">Go to Contact us</button> -->
+  </div>
+
+
+  <router-outlet></router-outlet>
+
+</div>
