@@ -626,6 +626,111 @@ we can use unit testing in services.
 1)why we use of @Injectable()
 when we Inject anotehr type of services that time we can use 
 @Injectable dexorator()
+__________________________________END________________________________________
+what is difference between href   
+
+and rounterLink
+href page la refersh karatay 
+
+_______________________________END___________________________________
+*)childern routes
+{path:"student/reistratuin",component:registertioncomponent}
+
+Dyanamic route chnages with help of property binding 
+<a [routerLink]="['about_us",Data.id]">view Details</a>
+
+{path:'home',component:HomeComponent},
+{path:'about',component:AboutUsComponent},
+{path:'contact',component:ContactComponent},
+{path:'student',
+children:[
+  {path:'',component:StudentComponent},
+  {path:'register',component:RegisterComponent},
+  {path:'details',component:DetailsComponent}
+],
+},
+]
+
+*)Child Routes / Nested Routes
+
+{ path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutUsComponent },
+  { path: 'contact', component: ContactComponent },
+  {
+    path: 'student',
+    children: [
+      { path: '', component: StudentComponent },
+      { path: 'register', component: RegisterComponent },
+      {
+        path: 'details',
+
+        children: [
+          { path: '', component: DetailsComponent },
+          { path: 'account', component: StudentAccountDetailsComponent },
+          { path: 'parent', component: StudentParentDetailsComponent }
+        ],
+      },
+    
+    ]
+  }
+*)Parameterize Route
+
+A route can receive the parameters either using a snapshot property of the ActivatedRoute or by
+subscribing to its property param.
+
+The Angular Router provides two different methods to get route parameters:
+1. Using the route snapshot
+2. Using Router Observables
+Example:
+• route.snapshot.param
+• route.snapshot.paramMap
+• route.param.subscribe
+• route.paramMap.subscrib
+
+
+of he data convert karatay obserable madhe
+
+pipe can be take obserable data tychavar modifictaion karatay ani parat obserable 
+return karatay 
+
+how do I get id in router like below
+
+
+  constructor(private _route:ActivatedRoute,private _bookservices:BookservicesService){
+
+  }
+  ngOnInit(){
+    alert(this._route.snapshot.params['id'])
+  }
+________________This is new Method to get Id in Route with help of subscriber____________________________
+  ngOnInit(){
+    this.getAllBooks();
+    this._route.params.subscribe(res=>{
+      this._bookservices.getBookById(res['id']).subscribe(res=>{
+        this.showMyallData=res;
+      })
+    })
+   // this._bookservices.getBookById(this._route.snapshot.params['id']).subscribe(res=>this.showMyallData=res)
+  }
+________________This is new Method to get Id in Route with help of subscriber____________________________
+
+*)Route Guards
+
+*)old Guard  is class level 
+*)Functional Guard 
+
+Guard Types
+In Short:
+✓ CanActivate guard (e.g. it checks route access).
+✓ CanActivateChild guard (checks child route access).
+✓ CanDeactivate guard (prompt for unsaved changes).
+✓ Resolve guard (pre-fetching route data).
+✓ CanLoad guard (check before loading feature module).
+
+ng g g auth 
+
+
+
 
 
 
