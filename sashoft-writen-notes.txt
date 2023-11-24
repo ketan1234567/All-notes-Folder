@@ -179,7 +179,8 @@ genrickMethod<T>(arg:T){
 ___________________________________________END_____________________________________
 *)What is promise?
 A Promise is an object representing the eventual completion or failure of an asynchronous operation. 
-A JavaScript Promise object contains both the producing code and calls to the consuming code. It can be used to deal with Asynchronous operation in JavaScript.
+A JavaScript Promise object contains both the producing code and calls to the consuming code. It can be used to deal
+ with Asynchronous operation in JavaScript.
 
 Promise State:-
 Pending - Initial State, Not yet Fulfilled or Rejected
@@ -242,7 +243,9 @@ Asynchronous - It never waits for each operation to complete, rather it executes
 ______________________________________________END______________________________________________
 *)What async function?
 async – This keyword is used to turn a function declaration to async function. 
-async Function - An async function is a function declared with the async keyword. An async function is a function that knows how to expect the possibility of the await keyword being used to invoke asynchronous code. It returns a Promise.
+async Function - An async function is a function declared with the async keyword. An async function is a function
+ that knows how to expect the possibility of the await keyword being used to invoke asynchronous code.
+ It returns a Promise.
 
 await - The await operator is used to wait for a Promise. It can only be used inside an async function within regular JavaScript code. 
 await can be put in front of any async promise-based function to pause your code on that line until
@@ -729,7 +732,249 @@ In Short:
 
 ng g g auth 
 
+Interview Questions
 
+*)why we use canActivetchild ? if we have can Activate
+
+*)CanDeacive:- if aapan form submit karansacha aagodar jara page la sodata aslo tar aapn 
+\
+_____________________________________________________________END___________________________________________
+
+
+_______________________________________CanActivate guard File start___________________________________
+
+
+import { CanActivateFn } from '@angular/router';
+
+export const authGuard: CanActivateFn = (route, state) => {
+  let data=localStorage.getItem("IsLogin");
+  if(data=="false"){
+alert("User is aunticated")
+return false
+  }
+  return true;
+};
+_______________________________________CanActivate guard File END___________________________________
+
+
+_______________________________________Routing File start___________________________________
+
+
+ { path: 'home', component: HomeComponent ,canActivate:[authGuard];
+
+_______________________________________Routing File END___________________________________
+
+_______________________________________canActivateChildGuard guard File start___________________________________
+
+
+export const canActivateChildGuard: CanActivateFn = (route, state) => {
+  const _route=inject(Router)
+  let data=localStorage.getItem("IsLogin");
+  if(data=="false"){
+confirm("Due to Right Access redirecting Login page")
+_route.navigate(['login'])
+return false
+  }
+  return true;
+};
+_______________________________________canActivateChildGuard guard File END___________________________________
+
+
+_______________________________________Routing File start___________________________________
+
+const routes: Routes = [
+  { path: 'home', component: HomeComponent ,canActivate:[authGuard]},
+  { path: 'about', component: AboutUsComponent,canActivate:[authGuard] },
+  { path: 'contact', component: ContactComponent ,canDeactivate:[anilGuard]},
+  { path: 'book', component: BookComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'bookdetails/:id', component: BookdetailsComponent,resolve:{objbook:resloveGuard}},
+  {
+    path: 'student',
+
+    children: [
+      { path: '', component: StudentComponent },
+      {path:'',canActivateChild:[canActivateChildGuard],
+      children:[
+        
+      { path: 'register', component: RegisterComponent },
+
+      ]
+    },
+      
+      {
+        path: 'details',
+        children: [
+          { path: '', component: DetailsComponent },
+          {
+            path:'',canActivateChild:[canActivateChildGuard],
+            children:[
+              { path: 'account', component: StudentAccountDetailsComponent },
+              { path: 'parent', component: StudentParentDetailsComponent }
+            ]
+          },
+        ]
+      },
+    
+    ]
+  }
+]
+_______________________________________Routing File END___________________________________
+
+_______________________________________canDeactive guard File start___________________________________
+// This is generic methd to used in best Approach
+export interface candeactivatecomponent{
+  canDeactive:()=>boolean;
+}
+
+ export const anilGuard: CanDeactivateFn<candeactivatecomponent> = (component, currentRoute, currentState, nextState) => {
+
+
+  return component.canDeactive ? component.canDeactive():true;
+ }
+
+
+// export const anilGuard: CanDeactivateFn<ContactComponent> = (component, currentRoute, currentState, nextState) => {
+
+
+//   return component.isFinalSubmit ? component.isFinalSubmit():true;
+
+
+  // let isSubmitted:boolean=false;
+  // if(isSubmitted==false){
+  //   return confirm("Are to sure to leave This page")
+  //   return false;
+  // }
+  // return true;
+_______________________________________canDeactive guard File END___________________________________
+
+
+_______________________________________Routing File start___________________________________
+
+  { path: 'contact', component: ContactComponent ,canDeactivate:[anilGuard]},
+
+_______________________________________Routing File END___________________________________
+
+*)Reslove Guard 
+Resolve Route Guards:-
+Angular provides Resolve interface with resolve method declaration. To create a Angular Resolve guard,
+we need to create a class by implementing Resolve interface.
+Resolve guard is used in the scenario where before navigating to any route we want to ensure whether
+there is data available or not. If there is no data then it has no meaning to navigate there. It means we
+have to resolve data before navigating to that route. Here comes the role of Angular Resolve guard.
+To use Resolve guard we need to create a class by implementing Resolve interface and define resolve
+method. The resolve method can return Observable or Promise or a synchronous value. 
+
+Resolve Interface
+To create a Resolve route guard, we need to create a class implementing Angular Resolve interface.
+Find the Resolve interface structure from Angular doc.
+interface Resolve<T> {
+resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<T> | Promise<T> | T
+}
+
+It has a method named as resolve with arguments ActivatedRouteSnapshot and RouterStateSnapshot.
+The method resolve can return Observable or Promise or a synchronous value.
+Resolve interface is imported from @angular/router API.
+
+ 1)working:-to pudata cha page data ahe ka nhi check karatay  before going this page
+
+_______________________________________Reslove_Guard File___________________________________
+export const resloveGuard: ResolveFn<Book> = (route, state) => {
+
+
+  const _bookservices=inject(BookservicesService); // we create object with help of inject
+
+  const _router=inject(Router)
+  let id=route.params['id'];
+
+
+  return _bookservices.getBookById(id).pipe(map(book=>{
+    if(book){
+  return book
+    }else{
+    alert("No data found for this book");
+    _router.navigate(['book']);
+    return null;
+
+    }
+  }));
+};
+_______________________________________Reslove_Guard File END___________________________________
+
+
+_______________________________________Routing File start___________________________________
+
+
+ { path: 'bookdetails/:id', component: BookdetailsComponent,resolve:{objbook:resloveGuard}},
+
+_______________________________________Routing File END___________________________________
+
+_____________________________________________get id in any page with help of route______________________
+
+*)How do I get id in router  in any component?
+
+export class BookdetailsComponent {
+  bookdetails: Book;
+  myAllBooks: Book[] = [];
+
+  constructor(private _route: ActivatedRoute, private _bookService: BookService, private _location: Location) {
+
+  }
+
+  ngOnInit() {
+    this.getAllbooks();
+    // 1.route.snapshot.param
+    // alert(this._route.snapshot.params['id']);
+    // this._bookService.getBookById(this._route.snapshot.params['id']).subscribe(res=>{
+    //   this.bookdetails=res;
+    // })
+
+    // 2. route.snapshot.paramMap
+    // alert(this._route.snapshot.paramMap.get('id'));
+    // this._bookService.getBookById(parseInt(this._route.snapshot.paramMap.get('id'))).subscribe(res => {
+    //   this.bookdetails = res;
+    // })
+
+    // 3. route.param.subscribe
+    // this._route.params.subscribe(res => {
+    //   //alert(res['id']);
+    //   this._bookService.getBookById(res['id']).subscribe(res => {
+    //     this.bookdetails = res;
+    //   })
+
+    // })
+
+    //4. route.paramMap.subscribe 
+
+    this._route.paramMap.subscribe(res => {
+      // alert(res.get('id'));
+
+      this._bookService.getBookById(parseInt(res.get('id'))).subscribe(res => {
+        this.bookdetails = res;
+      })
+    })
+    
+  }
+_______________________________END________________________________________________________________________________________
+
+*)Named and Multiple Router-Outlets (Auxiliary Routes)
+(secondary routes)
+
+The Router outlet is a placeholder that gets filled dynamically by Angular, depending on the current router.
+
+1. we'll see advanced uses of the <router-outlet> component such as named, multiple outlets and auxiliary routing.
+
+2. How to Create a Named Router Outlet?
+
+3. We can create a named Router outlet using the name property of the <router-outlet> 
+
+
+component:
+<router-outlet></router-outlet>
+<router-outlet name="outlet1"></router-outlet>
+<router-outlet name="outlet2"></router-outlet>
+
+working:-jara aapala aka page madhe multiple thikani page load karayacha asela tar aapan (Auxiliary Routes use karato)
 
 
 
