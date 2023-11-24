@@ -1,0 +1,19 @@
+<h2>Book Master Page</h2>
+
+<h3>Show Books</h3>
+
+<table border="1">
+    <tr>
+        <th>Book ID</th>
+        <th>Book Name</th>
+        <th>Show Details</th>
+    </tr>
+    <tr *ngFor="let book of myAllBooks">
+        <td>{{book.id}}</td>
+        <td>{{book.name}}</td>
+        <td>
+            <a [routerLink]="['/bookdetails',book.id]">Details</a>
+        </td>
+    </tr>
+
+</table>

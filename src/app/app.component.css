@@ -1,0 +1,16 @@
+h1{
+    background-color: blue;
+    text-align: center;
+    text-decoration: underline;
+    color: white;
+}
+
+.boldClass{
+    font-weight: bold;
+}
+.italicClass{
+    font-style: italic;
+}
+.colorClass{
+    background-color: blue;
+}

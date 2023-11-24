@@ -1,0 +1,32 @@
+<h2>Book Details Page</h2>
+
+<h3>Show Book Details</h3>
+
+<ul>
+    <li> ID : {{bookdetails.id}}</li>
+    <li> Name : {{bookdetails.name}}</li>
+    <li> Price : {{bookdetails.price}}</li>
+    <li> Description : {{bookdetails.description}}</li>
+
+</ul>
+<!-- <br/>
+<table border="1">
+    <tr>
+        <th>Book ID</th>
+        <th>Book Name</th>
+        <th>Show Details</th>
+    </tr>
+    <tr *ngFor="let book of myAllBooks">
+        <td>{{book.id}}</td>
+        <td>{{book.name}}</td>
+        <td>
+            <a [routerLink]="['/bookdetails',book.id]">Details</a>
+        </td>
+    </tr>
+
+</table> -->
+
+
+<button (click)="goback()">Back</button>
+
+
