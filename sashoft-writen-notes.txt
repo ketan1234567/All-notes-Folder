@@ -983,7 +983,7 @@ working:-jara aapala aka page madhe multiple thikani page load karayacha asela t
 
 
 
-
+ng new --no-standalone paChEx
 
 
 
