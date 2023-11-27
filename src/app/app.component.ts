@@ -1,6 +1,7 @@
 import { Component, HostListener, Input, ViewEncapsulation } from '@angular/core';
-import { Router } from '@angular/router';
-
+import { BookService } from './book.service';
+import { Book } from './book';
+import {Observable} from 'rxjs';
 
 
 @Component({
@@ -8,38 +9,50 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 
-
 })
 export class AppComponent {
   title = 'Welcome to Sahosoft Technologies';
+  mybooks: Book[];
+  mybooks$: Observable<Book[]>;
 
-  // country = 'UK';
-linkcss="active home";
-  newabout = 'aboutus';
+  mybook:Book;
+  mybook$:Observable<Book>;
 
-  getcolor(){
-    return "active home";
+  constructor(private _bookService: BookService) {
+
   }
 
-  constructor(private _router: Router) {
-    // if (this.country == 'india') {
-    //   this.newabout = "aboutus"
-    // }
-    // if (this.country == 'USA') {
-    //   this.newabout = "aboutus2"
-    // }
-    // if (this.country == 'UK') {
-    //   this.newabout = "aboutus3"
-    // }
+  ngOnInit() {
+    this.getAllbooks();
+    this.getBook();
+  }
+  getAllbooks() {
+   // debugger;
+    this._bookService.getBooks().subscribe(res => {
+      //debugger;
+      this.mybooks = res;
+    })
+
+    this.mybooks$=this._bookService.getBooks();
+
+    // this._bookService.getBooks2().subscribe(res => {
+    //   debugger;
+    //   this.mybooks = res;
+    // })
+
+    // this._bookService.getBooks3().subscribe(res => {
+    //   debugger;
+    //   this.mybooks = res;
+    // })
   }
 
+  getBook(){
+    this._bookService.getBookById(102).subscribe(res=>{
+     // debugger;
+      this.mybook=res[0];
+    })
 
-  gotocontactus() {
-    // this._router.navigate(['contactus']);
-    this._router.navigate(['contactus', 501]);
+    this.mybook$=this._bookService.getBookById(103);
   }
 
-  gotoaboutus() {
-    this._router.navigateByUrl("aboutus", { state: { empid: 201, empname: 'Ajeet Kumar' } });
-  }
 }

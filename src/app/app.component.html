@@ -1,59 +1,31 @@
 <div style="text-align: center;">
   <h1>Welcome to Sahosoft Technologies</h1>
-  <!-- <div>
-    <a routerLink="home">Home</a> |
-    <a routerLink="contactus">Contact US</a> |
-    <a routerLink="aboutus">About US</a> |  
-    <a routerLink="Student">Student</a> |
-  </div> -->
 
-  <!-- <div>
-    <a href="home">Home</a> |
-    <a href="contactus">Contact US</a> |
-    <a href="aboutus">About US</a> |  
-    <a href="Student">Student</a> |
-  </div> -->
+  <h2>Book Details with Subscribe Method</h2>
+  <ul>
+    <li *ngFor="let book of mybooks">
+      ID : {{book.id}} | Name : {{book.name}} | Category:{{book.category}}
+    </li>
+  </ul>
 
-  <div>
-    <!-- <a routerLink="home">Home</a> |
-    <a routerLink="contactus">Contact US</a> |
-    <a [routerLink]="newabout">About US</a> |  
-    <a routerLink="student">Student</a> | -->
+  <h2>Book Details with Async pipe</h2> 
+  <ul>
+    <li *ngFor="let book of mybooks$ | async">
+      ID : {{book.id}} | Name : {{book.name}} | Category:{{book.category}}
+    </li>
+  </ul> 
+  
 
-    <!-- <a routerLink="login">Login</a> |
-    <a routerLink="home">Home</a> |
-    <a routerLink="contactus">Contact US</a> |
-    <a routerLink="aboutus">About US</a> |
-    <a routerLink="student">Student</a> |
-    <a routerLink="book">Books</a> | -->
+  <h2>Get book by id using subscribe Method</h2>
 
-    <!-- <a routerLink="aboutus" [state]="{id:102,name:'Angular 16'}">About US - send data Client Side</a> |
-      <button (click)="gotoaboutus()">Send data server side</button> -->
-    <!-- <a [routerLink]="[{outlets:{routeroulet2:['aboutusnew']}}] ">About US new</a> |  
-    <a [routerLink]="[{outlets:{routeroulet2:['aboutusnew',501]}}] ">About US new 2</a> |   -->
-
-
-    <!-- <a [routerLink]="['aboutus',101]">About US 2</a> |
-    <a [routerLink]="['aboutus',101,'Chandan Kumar']">About US 3</a> |
-
-    <button (click)="gotocontactus()">Go to Contact us</button> -->
-
-    <a routerLink="login" routerLinkActive="active home">Login</a> |
-    <a routerLink="home" routerLinkActive="active home">Home</a> |
-    <a routerLink="contactus" [routerLinkActive]="linkcss">Contact US</a> |
-    <a routerLink="aboutus" [routerLinkActive]="getcolor()">About US</a> |
-    <a routerLink="student" routerLinkActive="active home">Student</a> |
-    <a routerLink="book" routerLinkActive="active home">Books</a> |
-
+  <div *ngIf="mybook">
+    ID : {{mybook.id}} | Name : {{mybook.name}} | Category:{{mybook.category}}
   </div>
 
-  <!-- <div style="background-color: red;">
-  <router-outlet></router-outlet>
-</div> -->
+  <h2>Get book by id using Async pipe</h2>
 
-  <!-- <div style="background-color: blue;">
-  <router-outlet name="routeroulet2"></router-outlet>
-</div> -->
-  <router-outlet></router-outlet>
-
+  <div *ngIf="mybook$ | async as book">
+    ID : {{book[0].id}} | Name : {{book[0].name}} | Category:{{book[0].category}}
+  </div>
+ 
 </div>

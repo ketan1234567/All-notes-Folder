@@ -1,6 +1,5 @@
-export class Book {
-    id: number;
-    name: string;
-    price: number;
-    description: string
+export interface Book {
+    id:number;
+    name:string;
+    category:string
 }
