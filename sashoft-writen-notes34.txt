@@ -1,0 +1,1401 @@
+There are two types scrpting language
+1)server side scriting labguage
+2)client side Scripting language
+
+
+2)what is difference between library and language
+1)library (React js,Angular js) (Library purna application develop karun shakat nhi)
+2)Framework(it can develop whole application)
+
+*)what is DOM
+
+when you run in html file in browser in called (DOM)
+
+it can whole code is document
+
+every element called object
+
+
+
+structur is called model
+
+*)what is oops ?
+
+*)How do I identify is decorator 
+when starting is prefixin @NgModule([
+
+])
+It is called decorator
+
+there are 
+
+
+meta Data
+
+1)Decalration:-component name 
+2)import :-predefined module
+3)Provider:-services name
+4)boostratup:-where shoulde be run this (Booting process)
+
+
+first time it was load index.html
+
+
+why is use component?
+
+*)Decorator is function its invoke automatically 
+
+*)error handing?
+it is showing message to instaed of error 
+
+*)what is different metaData?
+
+*)What is Encapsulation?
+
+method property and rapping data
+
+*)css scop define karanasthi karathi hotay angular 
+
+emulated (default) 1)No shadow dom style Encapsulation
+
+
+native/shadow down 2)shadow dom  style Encapsulation
+
+ 
+none 3) no shadow dom no style Encapsulation
+
+var:- var is globally type varible
+
+let:let scop type of varible type
+
+ const:const is scop of varible type
+declration and definition in should be same line 
+__________________________________________________END_____________________________
+
+10/11/2023
+
+*)Interfce is contain name of method 
+we can not defined not body
+
+interface la implement karanasathi we want write implements
+
+ineterface abc{
+showData()
+show1()
+display()
+}
+
+class xyz implments abc{
+showData(){
+conslog.log("showData");
+
+}
+show1(){
+conslog.log("show1);
+}
+display()
+conslog.log("display");
+}
+
+viewProviders:[xyz]
+
+constructor(private:_xyz:xyz){
+_Xyz.showData();
+_Xyz.show1();
+_Xyz.display();
+let mycolor:color
+mycolor=color.red
+consloe.log(mycolor)
+
+}
+ng g enum colors
+
+export enum colors{
+red=10
+green=20
+yellow=30
+blue=40
+
+}
+_________________________END_______________________________________
+11/11/2023
+
+*)What is Tuple
+we can put any value but we should be define before name
+
+  tupleMethod(){
+    var empid:number=10
+    var name:string="ketan"
+    let employee:[number,string]=[empid,name]
+
+    employee:[103,"damini"]
+    employee.push("vishal")
+    //console.log(employee);
+   // console.log(typeof(employee));
+    let person:[number,string][]=[
+      [1,"chandankumar"],
+      [2,"deshmukh"],
+      [3,"Anil"]
+    ]
+
+    console.log(person);
+    
+  }
+
+
+*)enum is defined in const string value 
+
+ng g enum color
+
+export enum Color {
+red=10,
+green=20,
+yellow=30
+}
+
+    let myColor:Color
+    myColor=Color.green
+    console.log(myColor);
+ _______________________-END__________________________________-
+*)why we use many function in project?
+beacuse we have specific requirement according we creates functions
+mainfunction(...anil: string[]):string{
+  return `${anil}`
+}
+    var result=this.mainfunction("uuu","vishal")
+    console.log(result);
+_________________________________________________________________
+*)what is generic method?
+
+genrickMethod<T>(arg:T){
+  return arg
+
+}
+    let output1=this.genrickMethod<string>("This is generic  method we did call")
+    let output2=this.genrickMethod<Number>(10)
+
+    console.log(output1);
+    console.log(output2);
+___________________________________________END_____________________________________
+*)What is promise?
+A Promise is an object representing the eventual completion or failure of an asynchronous operation. 
+A JavaScript Promise object contains both the producing code and calls to the consuming code. It can be used to deal
+ with Asynchronous operation in JavaScript.
+
+Promise State:-
+Pending - Initial State, Not yet Fulfilled or Rejected
+Fulfilled/Resolved – Promise Completed 
+Rejected – Promise Failed
+
+A pending promise can either be Resolved with a value or Rejected with a reason (error).
+When either of these options happens, the associated handlers queued up by a promise's then method are called.
+A promise is said to be settled if it is either Resolved or Rejected, but not Pending. 
+
+exmple:
+ console.log("start");
+        function myfunction(name){
+            return new Promise((reslove,reject)=>{
+                setTimeout(()=>{
+            console.log("This is settimeout");
+            reslove(name)
+          },2000)
+            })
+    
+        }
+       function gethobee(name){
+        return new Promise((reslove,reject)=>{
+            setTimeout(()=>{
+            console.log("inside hobbies settimesout");
+            reslove(['circket','reading','writing'])
+          },1000)
+
+        });
+          
+        }
+        myfunction('ketan')
+        .then(num=>gethobee(num))
+        .then(hubby=>console.log(hubby))
+__________________________________________________END______________________________
+*)what is callback?
+A callback function is a function (It can be any function Anonymous Function, Arrow Function)
+ passed into another function as an argument,
+ which is then invoked inside the outer function to complete some kind of routine or action
+
+Synchronous - It waits for each operation to complete, after that it executes the next operation.
+Asynchronous - It never waits for each operation to complete, rather it executes all operations in the first GO only.
+
+ function myfunction(name,callback){
+          setTimeout(()=>{
+            console.log("This is settimeout");
+            callback(name)
+          },2000)
+        }
+       function gethobee(name,callback){
+            setTimeout(()=>{
+            console.log("inside hobbies settimesout");
+            callback(['circket','reading','writing'])
+          },1000)
+        }
+        const num=myfunction('ketan',(num)=>{ console.log(num);
+            gethobee(num,(hubby)=>{console.log(hubby)
+            })
+        })
+______________________________________________END______________________________________________
+*)What async function?
+async – This keyword is used to turn a function declaration to async function. 
+async Function - An async function is a function declared with the async keyword. An async function is a function
+ that knows how to expect the possibility of the await keyword being used to invoke asynchronous code.
+ It returns a Promise.
+
+await - The await operator is used to wait for a Promise. It can only be used inside an async function within regular JavaScript code. 
+await can be put in front of any async promise-based function to pause your code on that line until
+ the promise fulfills, then return the resulting value.
+
+Async Function
+async function function_name () {……….}
+
+Async Function Expression 
+let function_name = async function () {………….}
+
+Async Arrow Function 
+let function_name = async () => {………….}
+
+exmple:
+        console.log("start");
+        function myfunction(name){
+            return new Promise((reslove,reject)=>{
+                setTimeout(()=>{
+            console.log("This is settimeout");
+            reslove(name)
+          },2000)
+            })
+    
+        }
+       function gethobee(name){
+        return new Promise((reslove,reject)=>{
+            setTimeout(()=>{
+            console.log("inside hobbies settimesout");
+            reslove(['circket','reading','writing'])
+          },1000)
+
+        });
+          
+        }
+
+      async  function showHubby(){
+        try{
+        let num=await myfunction('ketan')
+        let hobby= await gethobee(num)
+        console.log(num);
+        console.log(hobby);
+        }catch{
+            console.log("This is count not found error");
+        }
+        }
+        showHubby()
+____________________________________END______________________________________________
+*)diretive(important)
+
+Basically, directives are used to extend the power of the HTML attributes and to change the 
+appearance or behavior of a DOM element.
+Directive in Angular is a javascript class, which is declared as @directive. Angular has 3 types of
+
+html daynamic karatay 
+1)Componet directive
+2)structual directive(ngif,ngfor,ngswitch)
+3)attribute directive
+
+2)Structural directives are a key part of Angular everyone should be familiar with. They are responsible 
+for manipulating DOM through adding, removing or changing the elements. Even if you have 
+never written a structural directive yourself, you have probably been using *ngIf and *ngFor in 
+your templates pretty often. The asterisk (*) states it is a structural directive.
+
+There are basically 3 built in structural directives available in Angular.
+• NgIf (*ngIf )
+• NgFor (*ngFor)
+• NgSwitch (*ngSwitch
+*)What is difference between ng-template and ng block?
+code la orginaze karanasathi kela hota
+
+This is custom ng if  
+
+  <ng-template [ngIf]="true">
+    <div>
+      Hello World
+    </div>
+  
+  </ng-template> 
+______________________________________________END______________________________
+*)ngIf  with async pipe
+data la tranform karatya
+1)synch calling
+2)asynch calling
+
+difference between obserable vs promise
+1)promise aka velesa aka request handle karashakat
+2)obserable aka velesa multiple request hanlde kara shkatay
+
+*)subserible method tayala real data madhe convert karatay 
+*)asynch pipe promise and obserable data convert karun read data detay
+
+<div *ngIf="_msg|async as sms; else elseblock">
+<b>{{sms}}</b>
+</div>
+<ng-template #elseblock>
+Loading__________
+</ng-template>
+
+  getmessage():Promise<string>{
+ let _message="This is ketan deshmukh"
+// return new Promise(reslove=>reslove(_message))
+return new Promise(reslove=>{
+  setTimeout(()=>reslove(_message),3000)
+})
+  }
+_________________________________END____________________________________
+<button (click)="getAllData()">Refresh</button>
+<br><br>
+
+  <table border="1">
+  <tr>
+    <td>Sr.No</td>
+    <td>EMP ID</td>
+    <td>Name</td>
+  </tr>
+  <ng-template ngFor let-data [ngForOf]="exmpleOfarray" let-i="index" [ngForTrackBy]="fntracyby">
+    <tr>
+      <td>{{i+1}}</td>
+     <td>{{data.id}}</td>
+     <td>{{data.name}}</td>
+    </tr>
+
+  </ng-template>
+ 
+</table>
+
+</div>
+getAllData(){
+  this.exmpleOfarray=[
+    {id:1,name:"deshmukh"},
+    {id:2,name:"deshmukh"},
+    {id:3,name:"deshmukh"},
+    {id:4,name:"deshmukh"},
+    {id:5,name:"deshmukh"},
+    {id:6,name:"rawat"},
+    {id:7,name:"vishal"},
+    {id:8,name:"sujit"},
+    ]
+
+
+}
+fntracyby(index:number,exmpleOfarray:any){
+return exmpleOfarray.id
+}
+__________________________________________________________END_____________________________
+
+1)Attribute directive
+appearance changes karatay 
+
+1)NgStyle
+2)NgClass
+
+1)NgStyle we have to write three way 
+
+1)NgStyle=string
+2)Ngstyle=array
+
+  employee = [
+    { name: "ketan", country: "india" },
+    { name: "hitesh", country: "uk" },
+    { name: "sunil", country: "usa" },
+    { name: "vishal", country: "china" },
+    { name: "anil", country: "pakishta" },
+    { name: "tilu", country: "poland" }
+  ]
+
+  getcolor(country: any) {
+    //debugger;
+    switch (country) {
+      case 'india':
+        return 'blue';
+      case 'uk':
+        return 'red';
+      case 'china':
+        return 'yellow';
+      case 'pakishta':
+        return 'green';
+      case 'poland':
+        return 'skyblue';
+    }
+    return null;
+
+  }
+
+
+
+<div *ngFor="let emp of employee">
+  <div [ngStyle]="{'background-color':getcolor(emp.country)}">Name:{{emp.name}} | country:{{emp.country}}   </div> 
+
+</div>
+3)NgStyle=object
+
+<h1>Attribute directive Dyanimcally change</h1>
+<div [ngStyle]="{'background-color':mycountry=='india' ? 'green':'red'}">
+Hello World
+</div>
+____________________________________________END_____________________________________
+)NgClass=string <p [ngClass]="'one three'">This is ngClass</p>
+2)NgClass=array <p [ngClass]="['one','three']">Using ng class with array</p>
+3)ngClass=object <p [ngClass]="{'one':true,'three':true}">ng Class with Object</p>
+
+<div *ngFor="let emp of employee; index as i">
+  <div [ngClass]="{'one':i%2==0,'three':i%2==1}"> {{i}} |Name:{{emp.name}} | country:{{emp.country}}   </div> 
+
+</div>
+_______________________________________________END___________________________________________
+difference between 
+property vs Attribute
+
+what is DOM
+
+The DOM stands for Document object Model when a browser loads 
+a web page then browsers creates document  object model 
+
+entire html we can say (document)
+table p hr h1  we can (object)
+
+
+<input type=text name="anil" value="ketan"/>
+
+1)name
+2)type
+3)value 
+
+this is attribute 
+
+when we render web page in html 
+
+we can propery  in DOM
+_____________________________________________________END__________________________________
+
+*)data binding
+
+1)one way data binding 
+
+*)Component to View 
+
+1)Interploation binding
+exmple:
+<h1>InterPloation Binding</h1>
+<span innerHTML="{{name_34}}"></span>
+
+2)property Binding
+exmple:
+<h1>property Binding</h1>
+<span [innerHTML]="name_34"></span>
+
+*)difference between interpolation vs property binding
+
+1)ts file
+
+  currentvalue=true;
+
+  enabledisable(){
+    this.currentvalue=!this.currentvalue;
+  }
+
+2)html file
+
+<button (click)="enabledisable()">enabledisable</button>
+
+<h1>InterPloation Binding</h1>
+<button disabled="{{currentvalue}}">interoBinding</button>
+<br><br>
+<h1>property Binding</h1>
+<button [disabled]="currentvalue">propertyBind</button>
+
+
+3)style binding (<button [style.font-weight]="isbold ?'bold':'normal'">style binding</button>)
+4)class binding <button [class]="classtoapply">class Bining</button>
+
+5)Attribute binding 
+
+*)View to Component 
+
+6)event binding 
+
+
+
+
+
+
+2)Two way Data Binding  (custom binding)
+<h1>Two way Custom  Binding</h1>
+<input type="text" #textval [value]="_message" (keyup)="changesValue(textval.value)">
+Your Message{{_message}}
+
+3)Two way Data Binding
+
+<h1>Two way Binding</h1>
+<input type="text" [(ngModel)]="_message">
+Your Message{{_message}}
+______________________________________________________________________END___________________
+18/11/2023
+
+*)What is innerHTML?
+
+jara konata data asela aapala kade te jar aapala convert karayacha asela tar aapan 
+innerhtml vaparato 
+
+ts.file
+
+str="<h1>ketan deshmukh</h1>"
+
+html file
+
+<h1>innerHTML</h1>
+<span>{{str}}</span>
+<span innerHTML="{{str}}"></span>
+
+
+*)What is OuterHTML?
+when we use any element this outer HTML they can remove
+main element
+
+*)See Output in browser
+
+<h1>OuterHTML</h1>
+<span outerHTML="{{str}}"></span>
+_________________________________________________END__________________________________
+*)Pipes
+1)Built pupes
+1)lowercase
+2)uppercase
+3)Titlecase
+4)slice
+5)json pipe
+6)decimapipe
+7)percent pipe
+8)currency pipe
+9)Date Pipe
+10)async pipe (promise data la convert karatay real data madhe)
+
+exmple:
+
+welcome to {{title | uppercase}}
+
+
+
+2)custom pipes
+
+<br><br>
+<h1>{{title | reverse}}</h1>
+<br><br>
+<h1>{{para | limtword}}</h1>
+
+<br><br>
+<h1>{{para | limtword :40}}</h1>
+<br><br>
+<h1>{{para | limtword :35:'***********'}}</h1>
+
+
+1)Built-in pipes
+1)parametrized pipe
+exmple:
+welcome to {{title | slice :2:4}}
+welcome to {{title | slice :2}}
+
+jo pipe  parameter  accept karela tayala parameterized pipe
+2)chaining 
+aka data var la mutiple pipe laou shakato tayala cha chaining pipe manato
+
+angular madhe aapala as it is khi print karayacha asel tar 
+ we can use like this
+ <h1 ngNonBindable>Q1 vlue of {{title}}</h1>
+<p>minIntegerDigits=1 minFractionDigits=0 maxFractionDigits=3</p>
+<h1>{{12.34789568|number}}</h1>
+
+output:12.348
+_________________________________________________________END______________________________________________________
+*)what is services?
+we can use unit testing in services.
+1)module level services aapan banavato  tayacha object singletenon  tevato aapan 
+  providers: [services],
+
+2)component level services (every component it will create every object)
+
+*)interview question
+
+1)why we use of @Injectable()
+when we Inject anotehr type of services that time we can use 
+@Injectable dexorator()
+__________________________________END________________________________________
+what is difference between href   
+
+and rounterLink
+href page la refersh karatay 
+
+_______________________________END___________________________________
+*)childern routes
+{path:"student/reistratuin",component:registertioncomponent}
+
+Dyanamic route chnages with help of property binding 
+<a [routerLink]="['about_us",Data.id]">view Details</a>
+
+{path:'home',component:HomeComponent},
+{path:'about',component:AboutUsComponent},
+{path:'contact',component:ContactComponent},
+{path:'student',
+children:[
+  {path:'',component:StudentComponent},
+  {path:'register',component:RegisterComponent},
+  {path:'details',component:DetailsComponent}
+],
+},
+]
+
+*)Child Routes / Nested Routes
+
+{ path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutUsComponent },
+  { path: 'contact', component: ContactComponent },
+  {
+    path: 'student',
+    children: [
+      { path: '', component: StudentComponent },
+      { path: 'register', component: RegisterComponent },
+      {
+        path: 'details',
+
+        children: [
+          { path: '', component: DetailsComponent },
+          { path: 'account', component: StudentAccountDetailsComponent },
+          { path: 'parent', component: StudentParentDetailsComponent }
+        ],
+      },
+    
+    ]
+  }
+*)Parameterize Route
+
+A route can receive the parameters either using a snapshot property of the ActivatedRoute or by
+subscribing to its property param.
+
+The Angular Router provides two different methods to get route parameters:
+1. Using the route snapshot
+2. Using Router Observables
+Example:
+• route.snapshot.param
+• route.snapshot.paramMap
+• route.param.subscribe
+• route.paramMap.subscrib
+
+
+of he data convert karatay obserable madhe
+
+pipe can be take obserable data tychavar modifictaion karatay ani parat obserable 
+return karatay 
+
+how do I get id in router like below
+
+
+  constructor(private _route:ActivatedRoute,private _bookservices:BookservicesService){
+
+  }
+  ngOnInit(){
+    alert(this._route.snapshot.params['id'])
+  }
+________________This is new Method to get Id in Route with help of subscriber____________________________
+  ngOnInit(){
+    this.getAllBooks();
+    this._route.params.subscribe(res=>{
+      this._bookservices.getBookById(res['id']).subscribe(res=>{
+        this.showMyallData=res;
+      })
+    })
+   // this._bookservices.getBookById(this._route.snapshot.params['id']).subscribe(res=>this.showMyallData=res)
+  }
+________________This is new Method to get Id in Route with help of subscriber____________________________
+
+*)Route Guards
+
+*)old Guard  is class level 
+*)Functional Guard 
+
+Guard Types
+In Short:
+✓ CanActivate guard (e.g. it checks route access).
+✓ CanActivateChild guard (checks child route access).
+✓ CanDeactivate guard (prompt for unsaved changes).
+✓ Resolve guard (pre-fetching route data).
+✓ CanLoad guard (check before loading feature module).
+
+ng g g auth 
+
+Interview Questions
+
+*)why we use canActivetchild ? if we have can Activate
+
+*)CanDeacive:- if aapan form submit karansacha aagodar jara page la sodata aslo tar aapn 
+\
+_____________________________________________________________END___________________________________________
+
+
+_______________________________________CanActivate guard File start___________________________________
+
+
+import { CanActivateFn } from '@angular/router';
+
+export const authGuard: CanActivateFn = (route, state) => {
+  let data=localStorage.getItem("IsLogin");
+  if(data=="false"){
+alert("User is aunticated")
+return false
+  }
+  return true;
+};
+_______________________________________CanActivate guard File END___________________________________
+
+
+_______________________________________Routing File start___________________________________
+
+
+ { path: 'home', component: HomeComponent ,canActivate:[authGuard];
+
+_______________________________________Routing File END___________________________________
+
+_______________________________________canActivateChildGuard guard File start___________________________________
+
+
+export const canActivateChildGuard: CanActivateFn = (route, state) => {
+  const _route=inject(Router)
+  let data=localStorage.getItem("IsLogin");
+  if(data=="false"){
+confirm("Due to Right Access redirecting Login page")
+_route.navigate(['login'])
+return false
+  }
+  return true;
+};
+_______________________________________canActivateChildGuard guard File END___________________________________
+
+
+_______________________________________Routing File start___________________________________
+
+const routes: Routes = [
+  { path: 'home', component: HomeComponent ,canActivate:[authGuard]},
+  { path: 'about', component: AboutUsComponent,canActivate:[authGuard] },
+  { path: 'contact', component: ContactComponent ,canDeactivate:[anilGuard]},
+  { path: 'book', component: BookComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'bookdetails/:id', component: BookdetailsComponent,resolve:{objbook:resloveGuard}},
+  {
+    path: 'student',
+
+    children: [
+      { path: '', component: StudentComponent },
+      {path:'',canActivateChild:[canActivateChildGuard],
+      children:[
+        
+      { path: 'register', component: RegisterComponent },
+
+      ]
+    },
+      
+      {
+        path: 'details',
+        children: [
+          { path: '', component: DetailsComponent },
+          {
+            path:'',canActivateChild:[canActivateChildGuard],
+            children:[
+              { path: 'account', component: StudentAccountDetailsComponent },
+              { path: 'parent', component: StudentParentDetailsComponent }
+            ]
+          },
+        ]
+      },
+    
+    ]
+  }
+]
+_______________________________________Routing File END___________________________________
+
+_______________________________________canDeactive guard File start___________________________________
+// This is generic methd to used in best Approach
+export interface candeactivatecomponent{
+  canDeactive:()=>boolean;
+}
+
+ export const anilGuard: CanDeactivateFn<candeactivatecomponent> = (component, currentRoute, currentState, nextState) => {
+
+
+  return component.canDeactive ? component.canDeactive():true;
+ }
+
+
+// export const anilGuard: CanDeactivateFn<ContactComponent> = (component, currentRoute, currentState, nextState) => {
+
+
+//   return component.isFinalSubmit ? component.isFinalSubmit():true;
+
+
+  // let isSubmitted:boolean=false;
+  // if(isSubmitted==false){
+  //   return confirm("Are to sure to leave This page")
+  //   return false;
+  // }
+  // return true;
+_______________________________________canDeactive guard File END___________________________________
+
+
+_______________________________________Routing File start___________________________________
+
+  { path: 'contact', component: ContactComponent ,canDeactivate:[anilGuard]},
+
+_______________________________________Routing File END___________________________________
+
+*)Reslove Guard 
+Resolve Route Guards:-
+Angular provides Resolve interface with resolve method declaration. To create a Angular Resolve guard,
+we need to create a class by implementing Resolve interface.
+Resolve guard is used in the scenario where before navigating to any route we want to ensure whether
+there is data available or not. If there is no data then it has no meaning to navigate there. It means we
+have to resolve data before navigating to that route. Here comes the role of Angular Resolve guard.
+To use Resolve guard we need to create a class by implementing Resolve interface and define resolve
+method. The resolve method can return Observable or Promise or a synchronous value. 
+
+Resolve Interface
+To create a Resolve route guard, we need to create a class implementing Angular Resolve interface.
+Find the Resolve interface structure from Angular doc.
+interface Resolve<T> {
+resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<T> | Promise<T> | T
+}
+
+It has a method named as resolve with arguments ActivatedRouteSnapshot and RouterStateSnapshot.
+The method resolve can return Observable or Promise or a synchronous value.
+Resolve interface is imported from @angular/router API.
+
+ 1)working:-to pudata cha page data ahe ka nhi check karatay  before going this page
+
+_______________________________________Reslove_Guard File___________________________________
+export const resloveGuard: ResolveFn<Book> = (route, state) => {
+
+
+  const _bookservices=inject(BookservicesService); // we create object with help of inject
+
+  const _router=inject(Router)
+  let id=route.params['id'];
+
+
+  return _bookservices.getBookById(id).pipe(map(book=>{
+    if(book){
+  return book
+    }else{
+    alert("No data found for this book");
+    _router.navigate(['book']);
+    return null;
+
+    }
+  }));
+};
+_______________________________________Reslove_Guard File END___________________________________
+
+
+_______________________________________Routing File start___________________________________
+
+
+ { path: 'bookdetails/:id', component: BookdetailsComponent,resolve:{objbook:resloveGuard}},
+
+_______________________________________Routing File END___________________________________
+
+_____________________________________________get id in any page with help of route______________________
+
+*)How do I get id in router  in any component?
+
+export class BookdetailsComponent {
+  bookdetails: Book;
+  myAllBooks: Book[] = [];
+
+  constructor(private _route: ActivatedRoute, private _bookService: BookService, private _location: Location) {
+
+  }
+
+  ngOnInit() {
+    this.getAllbooks();
+    // 1.route.snapshot.param
+    // alert(this._route.snapshot.params['id']);
+    // this._bookService.getBookById(this._route.snapshot.params['id']).subscribe(res=>{
+    //   this.bookdetails=res;
+    // })
+
+    // 2. route.snapshot.paramMap
+    // alert(this._route.snapshot.paramMap.get('id'));
+    // this._bookService.getBookById(parseInt(this._route.snapshot.paramMap.get('id'))).subscribe(res => {
+    //   this.bookdetails = res;
+    // })
+
+    // 3. route.param.subscribe
+    // this._route.params.subscribe(res => {
+    //   //alert(res['id']);
+    //   this._bookService.getBookById(res['id']).subscribe(res => {
+    //     this.bookdetails = res;
+    //   })
+
+    // })
+
+    //4. route.paramMap.subscribe 
+
+    this._route.paramMap.subscribe(res => {
+      // alert(res.get('id'));
+
+      this._bookService.getBookById(parseInt(res.get('id'))).subscribe(res => {
+        this.bookdetails = res;
+      })
+    })
+    
+  }
+_______________________________END________________________________________________________________________________________
+
+*)Named and Multiple Router-Outlets (Auxiliary Routes)
+(secondary routes)
+
+The Router outlet is a placeholder that gets filled dynamically by Angular, depending on the current router.
+
+1. we'll see advanced uses of the <router-outlet> component such as named, multiple outlets and auxiliary routing.
+
+2. How to Create a Named Router Outlet?
+
+3. We can create a named Router outlet using the name property of the <router-outlet> 
+
+
+component:
+<router-outlet></router-outlet>
+<router-outlet name="outlet1"></router-outlet>
+<router-outlet name="outlet2"></router-outlet>
+
+working:-jara aapala aka page madhe multiple thikani page load karayacha asela tar aapan (Auxiliary Routes use karato)
+____________________________________________________________END________________________________________________________
+
+*)Observables and Subscribe
+
+Observable belongs to RxJS library. To perform asynchronous programming in Angular application we
+can use Observable.
+When we send and receive data over HTTP, we need to deal it asynchronously because fetching data
+over HTTP may take time. Observable is subscribed by using async pipe or by
+using subscribe method.
+Observable is a class of RxJS library. RxJS is ReactiveX library for JavaScript that performs reactive
+programming.
+Observable plays most basic role in reactive programming with RxJS.
+Some methods of Observable class are subscribe, map, mergeMap, of, retry, catch, throw etc. 
+
+*)aapan server two prakare calling karu shakati
+1)sychronous calling
+2)asychronous calling 
+
+
+Angular In-Memory Web API
+
+To test our application we need Web Service URL. Angular provides In-Memory Web API that
+will provide Web Service URL.
+We can configure URLs with dummy data using In-Memory Web API. Find the steps to use
+Angular In-Memory Web API.
+To install Angular In-Memory Web API, run following command.
+
+npm i angular-in-memory-web-api
+
+Observable of
+of is a method of Observable. of is used to create a simple Observable using data passed as 
+argument. of is imported as following.
+import 'rxjs/add/observable/of’;
+
+  getAllBooks():Observable<Book[]>{
+    return of(this.bookdetails)
+
+  }
+
+working:-plain data convert karatay obserables madhe
+
+Observable map
+The map operator is the most common of all. For each value that the Observable emits you can apply 
+a function in which you can modify the data. map is a method of Observable class. map applies a given 
+function to the value of its source Observable and then returns result as Observable. map is imported 
+as following.
+import 'rxjs/add/operator/map';
+
+working:-oberable type data getay tayamadhe modification karatay ani return obseravble karatay
+
+map is not working directly it is working with help of pipe
+
+
+  getBookName() {
+
+    // this._bookService.getBookById(103).subscribe(res=>{
+    //   debugger;
+    //   this.bookname=res[0].name;
+    // })
+
+    this._bookService.getBookById(104).pipe(map(obj => obj[0].name)).subscribe(res => {
+      //debugger;
+      this.bookname = res;
+    })
+
+    this.bookname$ = this._bookService.getBookById(102).pipe(map(obj => obj[0].name));
+
+  }
+
+
+Observable mergeMap
+mergeMap is a method of Observable class. mergeMap emits Observable based on the given function. If 
+inner functions returns Observable then final output will be the result of inner Observable emitted 
+data. 
+
+import 'rxjs/add/operator/mergeMap';
+
+
+
+
+working:-if we have to multiple subscribers then we have to use mergeMap(multiple subscription la merge karaty)
+
+  getRelatedBooks() {
+    // let category: string;
+    // this._bookService.getBookById(100).pipe(map(obj => obj[0].category)).subscribe(res => {
+    //   category = res;
+    //   this._bookService.getBookByCategory(category).subscribe(res => {
+    //     this.relatedbooks = res;
+    //   })
+    // })
+    // debugger;
+
+    this._bookService.getBookById(100).pipe(mergeMap(obj => {
+      let category = obj[0].category;
+      return this._bookService.getBookByCategory(category)
+    })).subscribe(res => {
+      this.relatedbooks = res;
+    })
+
+  }
+
+Observable retry
+retry is the method of Observable class. Some errors can be handled by just retrying request such as if 
+errors are transient and unlikely to repeat. 
+For example if we have slow network error and our request could not become successful then there 
+are the chances to make request successful if request is retried.
+We can retry request automatically by using retry operator. It accepts number argument. Suppose we 
+pass argument as retry(3) then the request will be retried for 3 times. 
+retry is imported from RxJS as following.
+import 'rxjs/add/operator/retry'
+
+working:-retury network connection lose aseltar (aapan api la hit karava lagatay 2 or 3) that time we 
+have to use retury 
+
+
+Observable pipe
+
+RxJS pipe is used to combine functional operators into a chain. Pipe can be used as Observable. we can 
+use pipe to combine functional operators. 
+pipe accepts operators as arguments such as filter, map, Scan etc. with comma separated and execute 
+them in a sequence they are passed in as arguments and finally returns Observable instance. To get 
+the result we need to subscribe it.
+Operators are imported from rxjs/operators. Find some operators to import it.
+
+import { mergeMap, retry, map, filter, scan } from 'rxjs/operators';
+
+
+find vs filter 
+
+filter sagala data la detay 
+find fakat match asela tar cha detay 
+
+
+
+
+
+___________________________________code component.ts________________________________________________
+export class AppComponent {
+  title = 'Welcome to Sahosoft Technologies';
+  mybooks: Book[];
+  mybooks$: Observable<Book[]>;
+
+  mybook:Book;
+  mybook$:Observable<Book>;
+
+  constructor(private _bookService: BookService) {
+
+  }
+
+  ngOnInit() {
+    this.getAllbooks();
+    this.getBook();
+  }
+  getAllbooks() {
+   // debugger;
+    this._bookService.getBooks().subscribe(res => {
+      //debugger;
+      this.mybooks = res;
+    })
+
+    this.mybooks$=this._bookService.getBooks();
+
+    // this._bookService.getBooks2().subscribe(res => {
+    //   debugger;
+    //   this.mybooks = res;
+    // })
+
+    // this._bookService.getBooks3().subscribe(res => {
+    //   debugger;
+    //   this.mybooks = res;
+    // })
+
+
+ //filter
+  filternumbers() {
+    this._bookService.getnumbers().pipe(
+      filter(n => n % 2 == 0)
+    ).subscribe(res => {
+      console.log("Filtered Numbers : " + res);
+    })
+  }
+
+  //map
+  mapnumbers() {
+    this._bookService.getnumbers().pipe(
+      map(n => n + 10)
+    ).subscribe(res=>{
+      console.log("mapped numbers :"+res);
+    })
+  }
+
+  }
+
+  getBook(){
+    this._bookService.getBookById(102).subscribe(res=>{
+     // debugger;
+      this.mybook=res[0];
+    })
+
+    this.mybook$=this._bookService.getBookById(103);
+  }
+
+}
+__________________________________________END__________________________________________________
+
+
+___________________________________code component.html________________________________________________
+<div style="text-align: center;">
+  <h1>Welcome to Sahosoft Technologies</h1>
+
+  <h2>Book Details with Subscribe Method</h2>
+  <ul>
+    <li *ngFor="let book of mybooks">
+      ID : {{book.id}} | Name : {{book.name}} | Category:{{book.category}}
+    </li>
+  </ul>
+
+  <h2>Book Details with Async pipe</h2> 
+  <ul>
+    <li *ngFor="let book of mybooks$ | async">
+      ID : {{book.id}} | Name : {{book.name}} | Category:{{book.category}}
+    </li>
+  </ul> 
+  
+
+  <h2>Get book by id using subscribe Method</h2>
+
+  <div *ngIf="mybook">
+    ID : {{mybook.id}} | Name : {{mybook.name}} | Category:{{mybook.category}}
+  </div>
+
+  <h2>Get book by id using Async pipe</h2>
+
+  <div *ngIf="mybook$ | async as book">
+    ID : {{book[0].id}} | Name : {{book[0].name}} | Category:{{book[0].category}}
+  </div>
+ 
+</div>
+__________________________________________END__________________________________________________
+
+*)Feature Module
+
+working:-
+
+A feature module is an ordinary Angular module for all intents and purposes, except the fact that isn’t
+the root module. Basically - it’s just an additional class with the @NgModule decorator and registered
+metadata.
+Feature modules are NgModules to organize code. As your app scales, you can organize code relevant
+for a specific feature. Feature Modules helps us to apply the clear boundaries for your features. With
+Feature Modules, you can keep code related to the particular functionality or feature separate from
+other code.
+The main aim for feature modules is delimiting the functionality that focuses on particular internal
+business inside a dedicated module, in order to achieve modularity. In addition, it restricts the
+responsibilities of the root module and assists to keep it thin.
+The feature modules are modules that goal of organizing an application code. It also helps you
+partition the app into focused areas when you can do everything within the root module.
+
+The feature module is an organizational best practice, as opposed to the concept of the core Angular
+API. The feature module delivers a cohesive set of functionality focused on a specific application need
+such as the user workflow, routing, or forms. While you can do everything within the root module,
+feature modules help you partition the app into focused areas.
+
+The feature modules contain the functionality on Application business domain, Workflow or provide
+the collection of the related utilities. The feature modules help us to classify the Application into the
+various areas.
+
+Root Modules Feature Modules
+Required to boot the root module to run the Application. Required to import the feature module to extend the
+Application.
+
+It is very straightforward and visible. It can hide or expose the module implementation from the
+other modules.
+
+Angular Module Loading
+An effective loading strategy is key to a successful single-page application.
+A module can be loaded eagerly, lazily and preloaded.
+
+✓ Eager loading is loading modules before application starts.
+✓ Lazy loading is loading modules on demand.
+✓ Preloading is loading modules in background just after application starts.
+
+The application module i.e. AppModule is loaded eagerly before application starts. But the feature
+modules can be loaded either eagerly or lazily or preloaded.
+
+_____________________________Generate Module_______________________________
+
+ng g m student
+_____________________________________END_______________________________________
+
+*)It will automatically add main root module file
+
+ng g m student2 --module=app
+
+ng new --no-standalone paChEx
+
+ng g m modulename --routing (with automatically import module)
+
+ng g m modulename --flat (with automatically import root folder)
+
+const routes: Routes = [
+{path:'',redirectTo:'home', pathMatch:'full'},
+{path:'home',component:HomeComponent},
+{path:'company',loadChildren:()=>import('../app/company/company.module').then(m=>m.CompanyModule)},
+{path:'person',loadChildren:()=>import('../app/person/person.module').then(m=>m.PersonModule)}
+
+]
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes,{preloadingStrategy:NoPreloading})],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+
+imports: [RouterModule.forRoot(routes,{preloadingStrategy:PreloadAllModules})], preloading
+
+
+  constructor() { }
+
+  preload(route:Route,load:()=>Observable<any>):Observable<any>{
+    if(route.data && route.data['prload']){
+  if(route.data['delay']){
+    return timer(5000).pipe(mergeMap(()=>load()))
+  }
+
+  return load()
+    }else{
+      return of(null);
+    }
+  
+  }
+
+const routes: Routes = [
+{path:'',redirectTo:'home', pathMatch:'full'},
+{path:'home',component:HomeComponent},
+{path:'company',loadChildren:()=>import('../app/company/company.module').then(m=>m.CompanyModule),data:{prload:true,delay:true}},
+{path:'person',loadChildren:()=>import('../app/person/person.module').then(m=>m.PersonModule)}
+
+];
+
+@NgModule({
+ // imports: [RouterModule.forRoot(routes,{preloadingStrategy:NoPreloading})],
+ //  imports: [RouterModule.forRoot(routes,{preloadingStrategy:PreloadAllModules})],
+   imports: [RouterModule.forRoot(routes,{preloadingStrategy:CustomPreloadingService})],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+)
+_________________________________________________________________________________________
+canLoad:Method we have to use 
+
+import { CanMatchFn } from '@angular/router';
+
+export const moduleAuthGuard: CanMatchFn = (route, state) => {
+  let isLoggin:boolean=false;
+  if(isLoggin){
+    return true
+  }else{
+    alert("No Access")
+    return false
+  }
+
+};
+
+{path:'person',loadChildren:()=>import('../app/person/person.module').then(m=>m.PersonModule), canLoad:[moduleAuthGuard]}
+
+
+______________________________________END________________________________________
+
+6/12/2023
+Angular Forms
+
+Forms are the main building blocks of any application. When we use forms for login, registration,
+submission, help request, etc.,
+it is necessary that whatever form we are developing, they must be user-friendly. And, it should have the
+indication of what went wrong etc.
+Forms are really important to collect the data from the users. Often, each website contains forms to
+collect the data.
+Forms are the mainstay of business applications. You use forms to log in, submit a help request, place an
+order, book a flight, schedule a meeting, and perform countless other data-entry tasks.
+Developing forms requires design skills as well as framework support for two-way data binding, change
+tracking, validation, and error handling.
+
+Angular provides 2 different ways to collect and validate the data from a user.
+1. Template-driven forms(shot form)
+2. Model-driven forms (Reactive forms(long form)
+Template Driven Forms
+
+Template driven forms are simple forms which can be used to develop forms. These are called
+template-driven as everything that we are going to use in an application is defined into the template
+that we are defining along with the component.
+
+Angular Forms
+
+Prerequisite
+We need to import FormsModule in an Application module file (i.e.app. module.ts).
+
+Template Driven Forms features
+▪ Easy to use.
+▪ Suitable for simple scenarios and fails for complex scenarios.
+▪ Similar to Angular 1.0.
+▪ Two way data binding (using [(NgModel)] syntax).
+▪ Minimal component code.
+▪ Automatic track of the form and its data.
+▪ Unit testing is another challenge.
+
+Model-driven forms (Reactive forms)
+
+Prerequisite
+we need to import ReactiveFormsModule in our app.module.ts file.
+Reactive Forms Features
+▪ More flexible, but needs a lot of practice
+▪ Handles any complex scenarios
+▪ More component code and less HTML markup
+▪ Easier unit testing
+
+Which one is better - Template Driven or Reactive?
+
+Neither Reactive nor Template Driven are better over each other. They both are different approaches, so
+you can use whichever suits your needs the most. You can even use both in the same application
+
+
+
+
+
