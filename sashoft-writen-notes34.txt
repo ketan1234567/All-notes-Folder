@@ -1395,6 +1395,253 @@ Which one is better - Template Driven or Reactive?
 Neither Reactive nor Template Driven are better over each other. They both are different approaches, so
 you can use whichever suits your needs the most. You can even use both in the same application
 
+constructor(private _fb:FormBuilder) { }
+  ngOnInit() {
+    // this.regForm = new FormGroup({
+    //   id: new FormControl(),
+    //   fname: new FormControl(),
+    //   lname: new FormControl(),
+    //   email: new FormControl(),
+    //   mobileno: new FormControl(),
+    // })
+
+    // this.regForm =this._fb.group({
+    //   id: new FormControl(),
+    //   fname: new FormControl(),
+    //   lname: new FormControl(),
+    //   email: new FormControl(),
+    //   mobileno: new FormControl(),
+    // })
+
+    // this.regForm =this._fb.group({
+    //   id: new FormControl(),
+    //   fname: new FormControl(),
+    //   lname: new FormControl(),
+    //   email: new FormControl(),
+    //   mobileno: new FormControl('8588805737'),
+    // })
+
+    // this.regForm =this._fb.group({
+    //   id: new FormControl(''),
+    //   fname: new FormControl(''),
+    //   lname: new FormControl(''),
+    //   email: new FormControl(''),
+    //   mobileno: new FormControl('8588805737'),
+    // })
+
+    // this.regForm =this._fb.group({
+    //   id: [],
+    //   fname: [],
+    //   lname: [],
+    //   email: [],
+    //   mobileno: [],
+    // })
+
+    // this.regForm =this._fb.group({
+    //   id: [0],
+    //   fname: [''],
+    //   lname: [''],
+    //   email: [''],
+    //   mobileno: ['8588805737'],
+    // })
+
+
+    // this.regForm =this._fb.group({
+    //   id: [0],
+    //   fname: ['',Validators.required],
+    //   lname: ['',Validators.required],
+    //   email: ['',Validators.required],
+    //   mobileno: ['8588805737',Validators.required],
+    // })
+
+    // this.regForm =this._fb.group({
+    //   id: [0],
+    //   fname: ['',[Validators.required,Validators.minLength(5),Validators.maxLength(10)]],
+    //   lname: ['',[Validators.required,Validators.minLength(5),Validators.maxLength(10)]],
+    //   email: ['',[Validators.required,Validators.email]],
+    //   mobileno: ['8588805737',Validators.required],
+    // })
+
+    this.regForm =this._fb.group({
+      id: [0],
+      fname: ['',[Validators.required,Validators.minLength(5),Validators.maxLength(10)]],
+      lname: ['',[Validators.required,Validators.minLength(5),Validators.maxLength(10)]],
+      email: ['',[Validators.required,Validators.email]],
+ 
+      mobilenos:new FormArray([
+        new FormControl()
+      ])
+
+    })
+
+    // this.regForm.get('fname').valueChanges.subscribe(firstname=>{
+    //   console.log("fname changed : "+ firstname);
+    // })
+    // this.regForm.get('lname').valueChanges.subscribe(lastname=>{
+    //   console.log("lname changed : "+ lastname);
+    // })
+
+    // this.regForm.valueChanges.subscribe(formdata=>{
+    //   console.log("fname :"+formdata.fname);
+    //   console.log('lname:'+formdata.lname);
+    // })
+
+    // this.regForm.get('fname').statusChanges.subscribe(fnamestatus=>{
+    //   console.log("fname status : "+fnamestatus);
+    // })
+
+    // this.regForm.get('lname').statusChanges.subscribe(lnamestatus=>{
+    //   console.log("lname status : "+lnamestatus);
+    // })
+
+    // this.regForm.statusChanges.subscribe(formdata=>{
+    //   console.log("Form Status : "+formdata);
+    // })
+
+    // let arr=new FormArray([
+    //   new FormControl(),
+    //   new FormControl()
+    // ])
+
+    // let arr=new FormArray([
+    //   new FormControl('Chandan'),
+    //   new FormControl('')
+    // ])
+
+    let arr=new FormArray([
+      new FormControl('Chandan'),
+      new FormControl('',Validators.required)
+    ])
+
+    console.log(arr.value);
+    console.log(arr.valid);
+
+    arr.reset();
+    console.log(arr.value);
+    console.log(arr.valid);
+  }
+
+  register(formdata:FormGroup){
+  console.log(formdata.value)
+  console.log(formdata.valid);
+
+  // console.log(this.regForm.value);
+
+  // console.log(this.regForm.get('fname').value);
+  // console.log(this.regForm.get('lname').value);
+  // console.log(this.regForm.get('email').value);
+  // console.log(this.regForm.get('mobileno').value);
+  }
+
+  reset(){
+    // this.regForm.reset();
+
+    this.regForm.reset({
+     // fname:'Chandan'
+     fname:this.regForm.get('fname').value
+    })
+  }
+
+  fildata(){
+    // this.regForm.setValue({
+    //   id:101,
+    //   fname:'Sameer',
+    //   lname:'Kumar',
+    //   email:'Sameer@gmail.com',
+    //   mobileno:'654646546'
+    // })
+
+    this.regForm.patchValue({
+      id:101,
+      fname:'Sameer',
+      lname:'Kumar',
+     // email:'Sameer@gmail.com',
+      mobileno:'654646546'
+    })
+  }
+
+  addmore(){
+    this.regForm.get('mobilenos').push(new FormControl());
+  }
+
+  deleterow(id:any){
+    this.regForm.get('mobilenos').removeAt(id);
+  }
+________________________________________________________
+
+html file
+
+<h2>Registartion Form </h2>
+
+<div>
+    <form [formGroup]="regForm" (ngSubmit)="register(regForm)">
+        <div>
+            First Name : <input type="text" placeholder="Enter Your First name" formControlName="fname">
+            <div *ngIf="regForm.controls['fname'].touched && !regForm.controls['fname'].valid">
+
+                <span *ngIf="regForm.controls['fname'].hasError('required')">
+                    First Name is required !!
+                </span>
+                <span *ngIf="regForm.controls['fname'].hasError('minlength')">
+                    First Name Should be 5 char !!
+                </span>
+                <span *ngIf="regForm.controls['fname'].hasError('maxlength')">
+                    First Name should be less than 10 char !!
+                </span>
+
+            </div>
+        </div>
+
+        <div>
+            Last Name : <input type="text" placeholder="Enter Your Last name" formControlName="lname">
+            <div *ngIf="regForm.controls['lname'].touched && !regForm.controls['lname'].valid">
+                <span *ngIf="regForm.controls['lname'].hasError('required')">
+                    Last Name is required !!
+                </span>
+                <span *ngIf="regForm.controls['lname'].hasError('minlength')">
+                    Last Name Should be 5 char !!
+                </span>
+                <span *ngIf="regForm.controls['lname'].hasError('maxlength')">
+                    Last Name should be less than 10 char !!
+                </span>
+            </div>
+        </div>
+
+        <div>
+            Email ID : <input type="text" placeholder="Enter Your Email id" formControlName="email">
+            <div *ngIf="regForm.controls['email'].touched && !regForm.controls['email'].valid">
+                <span *ngIf="regForm.controls['email'].hasError('required')">
+                    Email is required !!
+                </span>
+                <span *ngIf="regForm.controls['email'].hasError('email')">
+                    Email id Should be correct !!
+                </span>
+            </div>
+        </div>
+
+        <div formArrayName="mobilenos">
+            <div *ngFor="let mobileno of regForm.get('mobilenos').controls;index as idx">
+                Mobile no : <input type="text" placeholder="Enter Your Mobile no" [formControlName]="idx">
+                <!-- <div *ngIf="regForm.controls['mobileno'].touched && !regForm.controls['mobileno'].valid">
+                    mobileno is required !!
+                </div> -->
+                <button (click)="deleterow(idx)">Delete</button>
+            </div>
+            <button (click)="addmore()">Add More</button>
+        </div>
+        <div>
+            <button type="submit">Register</button>
+            <button type="reset">Cancel</button>
+
+            <button (click)="reset()">Reset</button>
+            <button (click)="fildata()">Fill data</button>
+        </div>
+
+    </form>
+
+</div>
+______________________________________________________________________________________________________________
+
 
 
 
