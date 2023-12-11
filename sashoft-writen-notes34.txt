@@ -879,6 +879,7 @@ Resolve interface is imported from @angular/router API.
  1)working:-to pudata cha page data ahe ka nhi check karatay  before going this page
 
 _______________________________________Reslove_Guard File___________________________________
+
 export const resloveGuard: ResolveFn<Book> = (route, state) => {
 
 
@@ -903,7 +904,6 @@ _______________________________________Reslove_Guard File END___________________
 
 
 _______________________________________Routing File start___________________________________
-
 
  { path: 'bookdetails/:id', component: BookdetailsComponent,resolve:{objbook:resloveGuard}},
 
@@ -1642,7 +1642,211 @@ html file
 </div>
 ______________________________________________________________________________________________________________
 
+HttpClient.get
+HttpClient serves the purpose to perform HTTP requests. To perform http GET request, HttpClient
+provides HttpClient.get method that accepts URL and options for parameter, header etc. and returns an 
+Observable instance. 
+When we subscribe Observable then GET request is executed on the server. 
+Find the syntax of HttpClient.get from Angular doc.
+get(url: string, options?: {
+headers?: HttpHeaders | {
+[header: string]: string | string[];
+};
+observe?: 'body';
+params?: HttpParams | {
+[param: string]: string | string[];
+};
+reportProgress?: boolean;
+responseType?: 'json';
+withCredentials?: boolean;
+}): Observable<Object>;
 
+HttpClient get()
+HttpClient.get accepts URL and other options such as parameter, headers etc. HttpClient.get has 
+following options to request http GET method.
+headers: It is of HttpHeaders types. It sets headers for the http GET request.
+observe: It defines whether we want complete response or body only or events only. We need to assign values for 
+observe property such as response for complete response, body for response with body and events for response 
+with events.
+params: It is of HttpParams type. It sets parameters in URL for http GET request.
+reportProgress: It is of boolean type. It is useful when we are requesting data. Setting reportProgress value as true 
+we can know progress report for our HttpClient.get request.
+responseType: It is used to define response type of HttpClient.get request. Its values can be arraybuffer, blob, json 
+and text.
+withCredentials: It is of boolean type. If the value is true then HttpClient.get will request data with credentials.
+
+HttpClient get()
+HttpClient.get with observe Property
+HttpClient.get method can use observe property to define whether we want complete response or 
+body only or events only. We need to assign values for observe property such as
+✓ observe : 'response' for complete response.
+✓ observe : 'body' for response with body.
+✓ observe : 'events' for response with events
+
+
+HttpClient get()
+Let’s see below example one by one: 
+▪ Requesting JSON using HttpClient.get using subscribe method
+▪ Requesting JSON using HttpClient.get using async pipe with Observable
+▪ Using HttpHeaders
+▪ Using HttpParams and HttpHeaders
+▪ Using HttpClient.get with observe Property
+▪ RxJS retry() to Handle Erro
+
+Note:
+Accept and Content-type are both headers sent from a client(browser say) to a service.
+Accept header is a way for a client to specify the media type of the response content
+ it is expecting and Contenttype is a way to specify the media type of request being 
+sent from the client to the server.
+
+export class BookService {
+  private bookURL = '/api/books';
+
+  constructor(private _http: HttpClient) { }
+
+  getAllbooks(): Observable<Book[]> {
+    // return this._http.get<Book[]>(this.bookURL);
+
+    return this._http.get<Book[]>(this.bookURL, { responseType: 'json' });
+
+  }
+
+  filterBooks(cat: string, yr: string): Observable<Book[]> {
+    let httHeaders = new HttpHeaders()
+      .set("Accept", "application/json")
+
+   return this._http.get<Book[]>(this.bookURL + "?category=" + cat + "&year" + yr,{
+      headers:httHeaders
+    })
+  }
+
+  filterBooks1(cat: string, yr: string): Observable<Book[]> {
+    let httHeaders = new HttpHeaders()
+      .set("Accept", "application/json")
+
+      let httpParams=new HttpParams()
+      .set("category",cat)
+      .set("year",yr)
+
+   return this._http.get<Book[]>(this.bookURL ,{
+      headers:httHeaders,
+      params:httpParams
+    })
+  }
+
+  // getFullResponse():Observable<Book[]>{
+  //   return this._http.get<Book[]>(this.bookURL,{
+  //     observe:'body'
+  //   })
+  // }
+
+  getFullResponse():Observable<HttpResponse<Book[]>>{
+    return this._http.get<Book[]>(this.bookURL,{
+      observe:'response'
+    })
+  }
+}
+_________________________________________________________-END___________________________________________
+<div style="text-align: center;">
+  <h1>Welcome to Sahosoft Technologies</h1>
+
+  <!-- <app-templateform></app-templateform> -->
+  <!-- <app-reactiveform></app-reactiveform> --><!-- 
+  <app-registrationform></app-registrationform> -->
+
+  <h3>Requesting JSON using HttpClient.get using subscribe method</h3>
+
+  <ul>
+    <li *ngFor="let book of AllBooks">
+      ID : {{book.id}} | Name : {{book.name}} | Category : {{book.category}} | Year : {{book.year}}
+    </li>
+  </ul>
+
+  <h3>Requesting JSON using HttpClient.get using async pipe with Observable</h3>
+  <ul>
+    <li *ngFor="let book of AllBooks$ | async">
+      ID : {{book.id}} | Name : {{book.name}} | Category : {{book.category}} | Year : {{book.year}}
+    </li>
+  </ul>
+
+
+  <h3>Using HttpHeaders</h3>
+  <ul>
+    <li *ngFor="let book of searchbooks">
+      ID : {{book.id}} | Name : {{book.name}} | Category : {{book.category}} | Year : {{book.year}}
+    </li>
+  </ul>
+
+  <h3>Using HttpParams and HttpHeaders</h3>
+  <ul>
+    <li *ngFor="let book of searchbooks1">
+      ID : {{book.id}} | Name : {{book.name}} | Category : {{book.category}} | Year : {{book.year}}
+    </li>
+  </ul>
+
+  <h3>Using HttpClient.get with observe Property</h3>
+
+
+
+</div>
+__________________________________________________________
+ts File
+
+export class AppComponent {
+  title = 'Welcome to Sahosoft Technologies';
+  AllBooks:Book[];
+
+  AllBooks$:Observable<Book[]>;
+  searchbooks:Book[];
+  searchbooks1:Book[];
+
+  // fullresponse:Book[];
+  fullresponse:HttpResponse<Book[]>;
+
+  constructor(private _bookService:BookService){}
+  ngOnInit(){
+    this.getmyAllBooks();
+    this.filterAllBooks("Angular Book","2023");
+    this.filterAllBooks1("AWS Book","2015");
+    this.getbooksfullresponse();
+  }
+
+
+  getmyAllBooks(){
+    this._bookService.getAllbooks().subscribe(res=>{
+      this.AllBooks=res;
+    })
+
+    this.AllBooks$=this._bookService.getAllbooks();
+  }
+
+  filterAllBooks(category,year){
+    this._bookService.filterBooks(category,year).subscribe(res=>{
+      this.searchbooks=res;
+    })
+  }
+
+  filterAllBooks1(category,year){
+    this._bookService.filterBooks1(category,year).subscribe(res=>{
+      this.searchbooks1=res;
+    })
+  }
+
+  getbooksfullresponse(){
+    this._bookService.getFullResponse().subscribe(res=>{
+      //debugger;
+
+      if(res.status==200){
+        this.fullresponse=res;
+      }else{
+        console.log("No Data found- some error occured")
+      }
+     
+    })
+  }
+  
+}
+_---------------------------------------------------------------------------------------------------------------
 
 
 
