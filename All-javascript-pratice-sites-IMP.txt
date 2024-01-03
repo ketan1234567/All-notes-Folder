@@ -1,0 +1,42 @@
+JavaScript30 by Wes Bos:
+
+Website: JavaScript30
+This is a free course by Wes Bos where you build 30 projects in 30 days using vanilla JavaScript. Each project comes with video tutorials and starter code.
+
+https://javascript30.com/
+
+
+The Odin Project:
+
+Website: The Odin Project
+The Odin Project is a full-stack curriculum that includes a JavaScript section with various projects. It's free and includes hands-on coding assignments.
+FreeCodeCamp - JavaScript Algorithms and Data Structures Certification:
+
+https://www.theodinproject.com/
+
+
+
+
+Website: freeCodeCamp - JavaScript Algorithms and Data Structures
+freeCodeCamp offers a certification that includes a variety of JavaScript algorithm and data structure projects. It's a great way to practice problem-solving and algorithmic thinking.
+Full Stack Open by University of Helsinki:
+
+Website: Full Stack Open
+This is a free and comprehensive full-stack development course by the University of Helsinki. It includes a part on JavaScript and React with practical projects.
+Coursera - "Interactivity with JavaScript" by University of Michigan:
+
+Website: Interactivity with JavaScript
+This Coursera course focuses on building interactive web applications using JavaScript. It includes hands-on projects to apply what you learn.
+Udemy - "The Complete JavaScript Course 2022: From Zero to Expert!" by Jonas Schmedtmann:
+
+Website: JavaScript Course on Udemy
+This is a popular Udemy course that covers JavaScript comprehensively and includes hands-on projects to reinforce your learning.
+Udacity - Front End Web Developer Nanodegree:
+
+Website: Front End Web Developer Nanodegree
+Udacity's Front End Web Developer Nanodegree includes projects where you can apply JavaScript skills to build interactive and responsive websites.
+Remember to choose a course that aligns with your learning style and goals. Additionally, as you work on projects, try to customize them and add your own features to get the most out of the learning experience.
+
+
+Interactive JavaScript
+https://codeactually.com/programming2.html
