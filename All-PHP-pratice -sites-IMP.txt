@@ -1,0 +1,38 @@
+
+If you're looking for websites to practice PHP exercises, here are some platforms that provide a variety of PHP coding challenges and exercises:
+
+HackerRank:
+
+Website: HackerRank PHP Practice
+HackerRank offers a dedicated section for PHP with challenges ranging from basic to advanced. It's a great platform for honing your PHP skills through coding exercises.
+Exercism:
+
+Website: Exercism PHP Track
+
+Exercism provides coding exercises and mentorship for various programming languages, including PHP. You can work on exercises and receive feedback from the community.
+CodeSignal:
+
+Website: CodeSignal PHP
+
+CodeSignal has a variety of PHP challenges and assessments to help you practice and improve your PHP coding skills. It also offers interview preparation resources.
+Codewars:
+
+Website: Codewars PHP
+
+Codewars is a platform where you can solve coding challenges, called Kata, to improve your skills. PHP is one of the supported languages, and you can find a wide range of difficulty levels.
+LeetCode:
+
+Website: LeetCode PHP
+
+LeetCode is a popular platform for coding interviews, and it includes a PHP section with various algorithmic challenges. It's a good resource for both practicing and preparing for technical interviews.
+PHP Exercises (by w3resource):
+
+Website: w3resource PHP Exercises
+
+w3resource offers a collection of PHP exercises covering a wide range of topics. It's a great resource for self-paced learning and hands-on practice.
+
+PHP The Right Way - Learning PHP Best Practices:(IMP)
+
+Website: PHP The Right Way
+While not specifically an exercise platform, PHP The Right Way is a comprehensive guide to best practices in PHP development. It includes code examples and explanations that can serve as exercises.
+When using these platforms, aim to solve problems regularly, and try to understand the underlying concepts. Additionally, consider building small projects to apply your PHP skills in real-world scenarios.
