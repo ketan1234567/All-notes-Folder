@@ -1,0 +1,776 @@
+HTML Interview Questions
+
+1. What is the difference between HTML and HTML5?
+HTML5 is the latest version of HTML with new elements (<article>, <nav>, <section>), APIs, and multimedia support.
+Introduced localStorage, sessionStorage, and canvas for better performance.
+
+
+
+1. What is the difference between <div> and <span>?
+Answer:
+<div> is a block-level element that takes up the full width of its parent container.
+<span> is an inline element that only takes up as much width as its content.
+Example:
+ 
+<div style="background-color: lightblue;">This is a div (block element).</div>
+<span style="background-color: lightgreen;">This is a span (inline element).</span>
+
+
+2. What are semantic elements in HTML?
+Answer:
+Semantic elements clearly define their meaning in a human-readable way. Some examples:
+
+<header> - Represents the top section of a page.
+<article> - Represents an independent piece of content.
+<section> - Represents a thematic grouping of content.
+Example:
+
+<article>
+  <h2>Semantic Elements Example</h2>
+  <p>This is an article section.</p>
+</article>
+
+2. What are the new elements introduced in HTML5?
+Some new elements:
+
+Structural: <header>, <footer>, <section>, <article>, <aside>
+Multimedia: <audio>, <video>
+Form Enhancements: <datalist>, <output>, <progress>
+
+3. What is the difference between <strong> and <b>, <em> and <i>?
+<strong> adds strong importance (bold visually).
+<b> only makes text bold without meaning.
+<em> gives emphasis (italic visually).
+<i> only makes text italic.
+
+<strong>Important Text</strong>
+<b>Bold Text</b>
+<em>Emphasized Text</em>
+<i>Italic Text</i>
+
+4. What is the difference between <iframe>, <frame>, and <frameset>?
+<iframe> (Inline Frame) embeds another webpage inside a page.
+<frame> and <frameset> were used in older HTML versions but are now obsolete.
+
+<iframe src="https://www.example.com" width="400" height="300"></iframe>
+
+5. What is the difference between id and class attributes?
+id is unique and used for a single element.
+class can be used for multiple elements.
+
+<div id="uniqueID">Unique</div>
+<div class="commonClass">Common 1</div>
+<div class="commonClass">Common 2</div>
+
+6. What is the difference between block and inline elements?
+Block Elements: Start on a new line and take full width. (e.g., <div>, <p>, <h1>).
+Inline Elements: Stay in line with text, take up only needed width. (e.g., <span>, <a>, <b>).
+
+<div style="background: lightblue;">Block Element</div>
+<span style="background: lightgreen;">Inline Element</span>
+
+
+7. What is the difference between <ol>, <ul>, and <dl>?
+<ol> (Ordered List) → Numbered items.
+<ul> (Unordered List) → Bulleted items.
+<dl> (Definition List) → Key-value pairs.
+
+<ol>
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ol>
+
+<ul>
+  <li>Item A</li>
+  <li>Item B</li>
+</ul>
+
+<dl>
+  <dt>Term</dt>
+  <dd>Definition</dd>
+</dl>
+
+8. What is the difference between absolute, relative, and root URLs?
+Absolute URL: Full path including domain (https://example.com/page.html).
+Relative URL: Path relative to the current page (/page.html).
+Root-relative URL: Starts from the root of the site (/images/pic.jpg).
+
+9. What are meta tags in HTML?
+Meta tags provide metadata about a webpage.
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="This is a sample website.">
+<meta name="keywords" content="HTML, CSS, JavaScript">
+
+
+10. What is the data-* attribute in HTML?
+The data-* attribute stores custom data for JavaScript.
+
+<button data-id="123" onclick="alert(this.dataset.id)">Click Me</button>
+
+
+What is the difference between inline, block, and inline-block elements?
+Block Elements: Take full width, start on a new line (e.g., <div>, <p>, <h1>).
+Inline Elements: Only take up as much width as necessary (e.g., <span>, <a>).
+Inline-block Elements: Like inline but can have width and height.
+
+<div style="background: lightblue;">Block</div>
+<span style="background: lightgreen;">Inline</span>
+
+
+What is the difference between id and class attributes?
+id is unique and used for a single element.
+class can be used for multiple elements.
+ <div id="unique">This has an ID</div>
+<div class="common">This has a class</div>
+<div class="common">This also has the same class</div>
+
+What is the difference between relative, absolute, and fixed positioning in CSS?
+Relative: Moves element relative to its original position.
+Absolute: Positions element relative to its nearest positioned ancestor.
+Fixed: Stays in the same position relative to the viewport.
+ 
+ .relative { position: relative; top: 20px; left: 20px; }
+.absolute { position: absolute; top: 50px; left: 50px; }
+.fixed { position: fixed; top: 0; left: 0; }
+
+
+What are semantic elements in HTML?
+Semantic elements improve readability and SEO. Examples:
+
+<header>, <footer>, <section>, <article>, <aside>, <nav>.
+<header>
+  <h1>Website Title</h1>
+</header>
+<section>
+  <article>
+    <h2>Blog Post</h2>
+    <p>Content of the article...</p>
+  </article>
+</section>
+
+
+What is the difference between <script> in <head> and before </body>?
+<head>: Loads scripts before rendering content (can block rendering).
+Before </body>: Loads scripts after content is rendered (better for performance).
+
+<head>
+  <script src="slow.js"></script> <!-- May delay page load -->
+</head>
+
+<body>
+  <script src="fast.js"></script> <!-- Recommended -->
+</body>
+
+
+What is the purpose of the alt attribute in images?
+The alt attribute provides alternate text for images, improving accessibility and SEO.
+<img src="dog.jpg" alt="A cute brown dog">
+
+
+
+What is the difference between <noscript> and <script>?
+<script> → Executes JavaScript code.
+<noscript> → Displays content if JavaScript is disabled in the browser.
+<noscript>
+  <p>JavaScript is disabled. Please enable it for a better experience.</p>
+</noscript>
+
+
+What are the new form input types in HTML5?
+HTML5 introduced new input types for better form validation:
+
+email, tel, url, date, number, range, color.
+<input type="email" placeholder="Enter your email">
+<input type="date">
+<input type="number" min="1" max="10">
+
+
+
+
+
+
+
+
+CSS Interview Questions
+1. What is CSS?
+CSS (Cascading Style Sheets) is used to style HTML elements, including layout, colors, fonts, and responsiveness.
+
+2. What are the different types of CSS?
+Inline CSS – Written inside an HTML tag.
+Internal CSS – Written inside a <style> tag within <head>.
+External CSS – Stored in a separate .css file.
+
+<!-- Inline CSS -->
+<p style="color: red;">This is red text.</p>
+
+<!-- Internal CSS -->
+<style>
+  p { color: blue; }
+</style>
+
+<!-- External CSS -->
+<link rel="stylesheet" href="styles.css">
+
+
+3. What is the difference between relative, absolute, and fixed positioning in CSS?
+Answer:
+relative: The element is positioned relative to its normal position.
+absolute: The element is positioned relative to the nearest positioned (relative/absolute/fixed) ancestor.
+fixed: The element is positioned relative to the viewport.
+Example:
+
+.relative {
+  position: relative;
+  top: 20px;
+  left: 30px;
+}
+
+.absolute {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: red;
+}
+
+4. What is Flexbox, and how does it work?
+Answer:
+Flexbox is a layout model that allows elements to align and distribute space dynamically.
+
+Example:
+ 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ 
+<div class="container">
+  <div>Item 1</div>
+  <div>Item 2</div>
+</div>
+
+
+3. What is the difference between relative, absolute, fixed, and sticky positioning?
+Position	Behavior
+static (default)	Follows normal document flow
+relative	Positioned relative to its original place
+absolute	Positioned relative to the nearest positioned ancestor
+fixed	Stays fixed on screen, even when scrolling
+sticky	Sticks to the viewport when scrolling
+
+.relative { position: relative; left: 20px; }
+.absolute { position: absolute; top: 50px; left: 50px; }
+.fixed { position: fixed; bottom: 0; right: 0; }
+.sticky { position: sticky; top: 10px; }
+
+4. What is the difference between em, rem, %, px, and vh/vw in CSS?
+Unit	Description
+px	Fixed size (e.g., 16px)
+%	Relative to parent element
+em	Relative to the parent font size
+rem	Relative to the root font size (html)
+vh/vw	Viewport height/width
+
+html { font-size: 16px; }
+div { font-size: 2em; } /* 2 × 16 = 32px */
+
+
+5. What is Flexbox and how does it work?
+Flexbox is used to align and distribute items in a container efficiently.
+
+Example
+.container {
+  display: flex;
+  justify-content: space-between; /* Aligns items */
+  align-items: center; /* Centers items */
+}
+
+Property	Description
+display: flex;	Enables flexbox
+justify-content	Aligns items horizontally (start, center, end, space-between)
+align-items	Aligns items vertically (stretch, center, start, end)
+flex-wrap	Wraps items (nowrap, wrap, wrap-reverse)
+flex-direction	Row or column (row, row-reverse, column, column-reverse)
+
+Example
+<div class="container">
+  <div class="box">1</div>
+  <div class="box">2</div>
+  <div class="box">3</div>
+</div>
+
+6. What is Grid in CSS?
+CSS Grid helps create two-dimensional layouts.
+
+example
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  gap: 10px; /* Spacing */
+}
+
+
+Property	Description
+grid-template-columns	Defines number of columns
+grid-template-rows	Defines number of rows
+gap	Space between items
+align-items	Aligns items vertically
+justify-items	Aligns items horizontally
+
+Example
+<div class="container">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+</div>
+
+
+7. What is the difference between min-width, max-width, and width?
+width → Fixed width
+min-width → Minimum width before shrinking
+max-width → Maximum width before expanding
+Example
+div {
+  width: 50%;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+9. What is the difference between opacity and visibility?
+opacity: 0; → Element is invisible but still takes space.
+visibility: hidden; → Element is hidden but still takes space.
+display: none; → Element is removed from layout.
+Example
+.hidden { opacity: 0; }
+
+
+10. How do media queries work in CSS?
+Media queries are used for responsive design.
+
+Example
+@media (max-width: 600px) {
+  body { background-color: lightblue; }
+}
+
+
+12. What is the difference between inline, block, and inline-block?
+Property	Description
+block	Starts on a new line, takes full width (div, p)
+inline	Stays in line, only takes as much width as needed (span, a)
+inline-block	Like inline, but allows height/width changes (button)
+
+.inline { display: inline; }
+.block { display: block; }
+.inline-block { display: inline-block; width: 100px; }
+
+
+13. What is the difference between absolute, relative, and fixed units?
+Unit- Example-	Description
+px-	16px-	Fixed size
+%-	50%-	Relative to parent element
+em-	1.5em-	Relative to parent font size
+rem- 1.5rem- Relative to root font size
+
+
+
+
+16. What is the difference between visibility: hidden; and display: none;?
+Property	Effect
+visibility: hidden;	Hides the element but keeps its space
+display: none;	Completely removes the element from the layout
+
+ .hidden {
+  visibility: hidden;
+}
+
+.removed {
+  display: none;
+}
+
+
+20. What is the difference between hover, focus, and active states?
+Pseudo-Class	Description
+:hover	When the mouse hovers over the element
+:focus	When the element is clicked or selected (e.g., input fields)
+:active	When the element is being clicked (pressed down)
+ 
+ button:hover {
+  background-color: blue;
+}
+
+input:focus {
+  border: 2px solid red;
+}
+
+button:active {
+  background-color: green;
+}
+
+
+21. What is the difference between nth-child() and nth-of-type()?
+nth-child(n): Selects the nth child, regardless of type.
+nth-of-type(n): Selects the nth element of a specific type.
+p:nth-child(2) {
+  color: red;
+}
+
+p:nth-of-type(2) {
+  color: blue;
+}
+
+
+23. How do you create an animation in CSS?
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100px);
+  }
+}
+
+.box {
+  animation: slide 2s infinite alternate;
+}
+
+
+24. What is the difference between transform, transition, and animation?
+
+
+Property	Description
+transform	Modifies the element’s position, rotation, etc.
+transition	Smooths the change between two states
+animation	Defines complex animations
+
+div {
+  transform: rotate(45deg);
+  transition: all 0.5s;
+  animation: bounce 2s infinite;
+}
+
+25. How do you make a div fully responsive?
+div {
+  transform: rotate(45deg);
+  transition: all 0.5s;
+  animation: bounce 2s infinite;
+}
+
+
+
+
+
+
+
+
+JavaScript Interview Questions
+5. What is the difference between == and ===?
+Answer:
+== (Loose equality): Compares values but does not check types.
+=== (Strict equality): Compares both value and type.
+Example:
+ 
+console.log(5 == "5");  // true (type conversion happens)
+console.log(5 === "5"); // false (different types)
+
+
+6. What is event delegation in JavaScript?
+Answer:
+Event delegation is a technique where a parent element handles events of its child elements.
+
+Example:
+ 
+document.getElementById("parent").addEventListener("click", function(event) {
+  if (event.target.tagName === "BUTTON") {
+    console.log("Button clicked:", event.target.textContent);
+  }
+});
+ 
+ 
+<div id="parent">
+  <button>Click Me</button>
+</div>
+
+---------------React---------------
+
+1. What is React?
+React is a JavaScript library for building user interfaces. It allows developers to create reusable components and manage the application's state efficiently.
+
+ 
+function Hello() {
+  return <h1>Hello, World!</h1>;
+}
+export default Hello;
+
+
+2. What are the key features of React?
+Component-Based – UI is divided into reusable components.
+Virtual DOM – Improves performance by updating only changed parts.
+Unidirectional Data Flow – Data flows in one direction from parent to child.
+Declarative UI – UI updates automatically when data changes.
+
+
+SX (JavaScript XML) allows writing HTML inside JavaScript.
+
+Example of JSX
+
+const element = <h1>Hello, JSX!</h1>;
+
+**Without JSX (Using React.createElement)
+
+const element = React.createElement("h1", null, "Hello, JSX");
+
+
+4. What is the Virtual DOM?
+The Virtual DOM is a lightweight copy of the actual DOM.
+
+React updates the Virtual DOM first, then compares changes with the actual DOM.
+It updates only the changed parts, improving performance.
+Example of Virtual DOM in action
+
+const [count, setCount] = React.useState(0);
+
+function increment() {
+  setCount(count + 1); // Updates the Virtual DOM first
+}
+
+return <button onClick={increment}>Count: {count}</button>;
+
+
+
+5. What are React components?
+A component is a reusable block of UI. There are two types:
+
+Functional Component (Preferred)
+Class Component (Older method)
+
+**Functional Component
+
+function Greeting() {
+  return <h1>Hello, React!</h1>;
+}
+export default Greeting;
+
+**Class Component
+ 
+import React, { Component } from "react";
+
+class Greeting extends Component {
+  render() {
+    return <h1>Hello, React!</h1>;
+  }
+}
+export default Greeting;
+
+
+6. What is State in React?
+State is an object that holds component data and triggers re-renders when updated.
+
+Example
+ 
+import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+    </div>
+  );
+}
+export default Counter;
+
+
+7. What is Props in React?
+Props (Properties) are used to pass data from parent to child components.
+
+Example
+ 
+function Welcome(props) {
+  return <h1>Hello, {props.name}!</h1>;
+}
+
+export default function App() {
+  return <Welcome name="Naruto" />;
+}
+
+
+8. What is the difference between State and Props?
+Feature	State	Props
+Mutability	Can be changed	Read-only
+Access	Managed inside a component	Passed from parent
+Usage	Stores data for component	Passes data to child
+
+. What is useState Hook?
+useState is a React Hook for managing state in functional components.
+
+Example
+ 
+import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return <button onClick={() => setCount(count + 1)}>Count: {count}</button>;
+}
+
+
+0. What is useEffect Hook?
+useEffect runs side effects (API calls, subscriptions) in functional components.
+
+Example: Run once on component mount
+ 
+import { useEffect } from "react";
+
+function Example() {
+  useEffect(() => {
+    console.log("Component Mounted");
+  }, []);
+
+  return <h1>Hello!</h1>;
+}
+
+
+11. What is React Router?
+React Router allows navigation between pages without refreshing.
+
+Example
+ 
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
+
+
+12. What is Context API?
+Context API allows sharing global state without passing props manually.
+
+Example
+ 
+import { createContext, useContext } from "react";
+
+const UserContext = createContext();
+
+function UserProvider({ children }) {
+  return <UserContext.Provider value="Naruto">{children}</UserContext.Provider>;
+}
+
+function Welcome() {
+  const user = useContext(UserContext);
+  return <h1>Hello, {user}!</h1>;
+}
+
+export default function App() {
+  return (
+    <UserProvider>
+      <Welcome />
+    </UserProvider>
+  );
+}
+
+
+13. What is Redux?
+Redux is a state management tool for large applications.
+
+Redux Flow
+Actions → Defines an event.
+Reducer → Updates state based on action.
+Store → Holds the global state.
+Dispatch → Sends an action.
+
+
+14. What is useRef Hook?
+useRef is used to access DOM elements and store values without re-rendering.
+
+Example
+ 
+import { useRef } from "react";
+
+function InputFocus() {
+  const inputRef = useRef();
+
+  function focusInput() {
+    inputRef.current.focus();
+  }
+
+  return (
+    <div>
+      <input ref={inputRef} type="text" />
+      <button onClick={focusInput}>Focus Input</button>
+    </div>
+  );
+}
+
+
+15. What is Lazy Loading in React?
+Lazy loading loads components only when needed, improving performance.
+
+Example
+ 
+import React, { lazy, Suspense } from "react";
+
+const LazyComponent = lazy(() => import("./LazyComponent"));
+
+function App() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <LazyComponent />
+    </Suspense>
+  );
+}
+
+
+16. What is Memoization in React?
+Memoization optimizes performance by avoiding unnecessary re-renders.
+
+useMemo Example
+ 
+import { useMemo } from "react";
+
+function ExpensiveCalculation({ num }) {
+  const result = useMemo(() => num * 2, [num]);
+  return <p>Result: {result}</p>;
+}
+
+
+17. What are React Fragments?
+Fragments allow returning multiple elements without extra <div> tags.
+
+Example
+ 
+function List() {
+  return (
+    <>
+      <h1>Item 1</h1>
+      <h1>Item 2</h1>
+    </>
+  );
+}
+
+18. What is the difference between useEffect and useLayoutEffect?
+Hook	When it Runs
+useEffect	After rendering (asynchronous)
+useLayoutEffect	Before the browser paints the screen (synchronous)
+
+
